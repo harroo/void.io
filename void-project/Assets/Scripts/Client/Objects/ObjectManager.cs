@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardManager : MonoBehaviour {
+public class ObjectManager : MonoBehaviour {
 
-    public static CardManager instance;
+    public static ObjectManager instance;
     private void Awake () { instance = this; }
 
     public GameObject prefab;
@@ -28,15 +28,15 @@ public class CardManager : MonoBehaviour {
             Buffer.BlockCopy(data, index, buf, 0, size);
             index += size;
 
-            LoadCard(buf);
+            LoadObject(buf);
         }
     }
 
-    private List<Card> cards = new List<Card>();
+    private List<Object> cards = new List<Object>();
 
-    public void LoadCard (byte[] buf) {
+    public void LoadObject (byte[] buf) {
 
-        Card card = Instantiate(prefab, Vector3.zero, Quaternion.identity).GetComponent<Card>();
+        Object card = Instantiate(prefab, Vector3.zero, Quaternion.identity).GetComponent<Object>();
         card.transform.SetParent(parent);
         card.transform.localScale = new Vector3(1,1,1);
         card.transform.position = Vector3.zero;
@@ -44,9 +44,9 @@ public class CardManager : MonoBehaviour {
         cards.Add(card);
     }
 
-    public void CreateCard (int cardID) {
+    public void CreateObject (int cardID) {
 
-        Card card = Instantiate(prefab, Vector3.zero, Quaternion.identity).GetComponent<Card>();
+        Object card = Instantiate(prefab, Vector3.zero, Quaternion.identity).GetComponent<Object>();
         card.transform.SetParent(parent);
         card.transform.localScale = new Vector3(1,1,1);
         card.transform.position = Input.mousePosition;
@@ -54,16 +54,16 @@ public class CardManager : MonoBehaviour {
         cards.Add(card);
     }
 
-    public void DeleteCard (int cardID) {
+    public void DeleteObject (int cardID) {
 
-        Card card = Array.Find(cards.ToArray(), ctx => ctx.ID == cardID);
+        Object card = Array.Find(cards.ToArray(), ctx => ctx.ID == cardID);
         Destroy(card.gameObject);
         cards.Remove(card);
     }
 
-    public void UpdateCard (int cardID, byte[] cardData) {
+    public void UpdateObject (int cardID, byte[] cardData) {
 
-        Card card = Array.Find(cards.ToArray(), ctx => ctx.ID == cardID);
+        Object card = Array.Find(cards.ToArray(), ctx => ctx.ID == cardID);
         card.Config(cardData);
 
         card.transform.SetSiblingIndex(card.transform.parent.childCount - 1);

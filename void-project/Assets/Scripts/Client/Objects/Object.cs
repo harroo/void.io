@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Card : MonoBehaviour {
+public class Object : MonoBehaviour {
 
     public InputField title, field;
 
@@ -99,7 +99,7 @@ public class Card : MonoBehaviour {
                 minCache != minimized
             ) {
 
-                MainClient.SendCardUpdate(ID, GetData());
+                MainClient.SendObjectUpdate(ID, GetData());
 
                 AnchorCache();
             }
@@ -115,8 +115,8 @@ public class Card : MonoBehaviour {
         minCache = minimized;
     }
 
-    public void DeleteThisCard () {
+    public void DeleteThisObject () {
 
-        MainClient.SendCardDelete(ID);
+        MainClient.SendObjectDelete(ID);
     }
 }
