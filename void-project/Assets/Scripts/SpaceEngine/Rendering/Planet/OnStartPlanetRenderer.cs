@@ -1,15 +1,17 @@
 
 using UnityEngine;
 
-public class MainMenuPlanetRenderer : MonoBehaviour {
+public class OnStartPlanetRenderer : MonoBehaviour {
 
     public PlanetRenderer pRenderer;
+
+    public float _size;
 
     private void Start () {
 
         pRenderer.Render(new PlanetRenderData{
 
-            size = 1.6f,
+            size = _size,
 
             baseID = PlanetRendererAssets.RandomBaseRange(),
             overlayID = PlanetRendererAssets.RandomOverlayRange(),
