@@ -58,6 +58,13 @@ public class Console : MonoBehaviour {
         }
 
         instance.QueueMessage(type + ": " + msg);
+
+        switch (logType) {
+
+            case LogType.ERROR: Debug.LogError(msg); break;
+            case LogType.WARN: Debug.LogWarning(msg); break;
+            default: Debug.Log(msg); break;
+        }
     }
     public static void Log (string msg) {
 
