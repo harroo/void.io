@@ -20,17 +20,17 @@ public class UdpLayer : UnityEngine.MonoBehaviour {
 
         switch (packet[0]) {
 
-            case UdpMids.UpdateObjectPos: { //update object pos
+            case UdpMids.UpdateObjectPos: {
 
                 int id = BitConverter.ToInt32(packet, 1);
-
-                if (id == GlobalValues.LocalPlayerID) break;
 
                 float x = BitConverter.ToSingle(packet, 5);
                 float y = BitConverter.ToSingle(packet, 9);
                 float r = BitConverter.ToSingle(packet, 13);
 
-                ObjectManager.instance.UpdateObjectPos(id, x, y, r);
+                if (id != GlobalValues.LocalPlayerID) ObjectManager.instance.UpdateObjectPos(id, x, y, r);
+
+                if (GlobalValues.Hosting) ServerSave.UpdateObjectPos(id, new UnityEngine.Vector3(x, y, r));
 
             break; }
         }

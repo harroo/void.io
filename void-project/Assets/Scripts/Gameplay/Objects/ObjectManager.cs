@@ -31,20 +31,26 @@ public class ObjectManager : MonoBehaviour {
             int id = BitConverter.ToInt32(data, index);
             index += 4;
 
+            float px = BitConverter.ToSingle(data, index); index += 4;
+            float py = BitConverter.ToSingle(data, index); index += 4;
+            float pz = BitConverter.ToSingle(data, index); index += 4;
+
             byte[] buf = new byte[size];
             Buffer.BlockCopy(data, index, buf, 0, size);
             index += size;
 
-            LoadObject(id, type, buf);
+            LoadObject(id, type, buf, new Vector3(px, py, pz));
         }
     }
 
     private List<Object> objs = new List<Object>();
 
-    public void LoadObject (int objID, int type, byte[] buf) {
+    public void LoadObject (int objID, int type, byte[] buf, Vector3 pos) {
 
         Object obj = Instantiate(GetPrefab(type), Vector3.zero, Quaternion.identity).GetComponent<Object>();
         obj.ID = objID;
+        obj.transform.position = new Vector3(pos.x, pos.y, 0);
+        obj.transform.eulerAngles = new Vector3(0, 0, pos.z);
         obj.Config(buf);
         objs.Add(obj);
     }
