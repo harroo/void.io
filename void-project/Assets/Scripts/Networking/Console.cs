@@ -31,11 +31,21 @@ public class Console : MonoBehaviour {
         Render();
     }
 
+    private bool renderQueued;
+
+    private void Update () {
+
+        if (renderQueued) {
+
+            Render();
+            renderQueued = false;
+        }
+    }
+
     public void AddMessage (string msg) {
 
         AddChatList(msg);
-
-        Render();
+        renderQueued = true;
     }
 
     public static void Log (LogType logType, string msg) {
