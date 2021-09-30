@@ -13,6 +13,9 @@ public class PlayerRenderingAssets : MonoBehaviour {
     public static Sprite Get (int index)
         => instance.textures[index];
 
+    public static int Index (Sprite sprite)
+        => System.Array.IndexOf(instance.textures, sprite);
+
     public static int RandomRange ()
         => Random.Range(0, instance.textures.Length - 1);
 }

@@ -9,7 +9,6 @@ public class LocalPlayerObject : Object {
 
     public SpriteRenderer spriteRenderer;
 
-    //gets info about the local player, so dont use on instances of other players
     public override byte[] GetData () {
 
         byte[] nameBuf = System.Text.Encoding.ASCII.GetBytes(GlobalValues.GetUsername());
@@ -21,5 +20,16 @@ public class LocalPlayerObject : Object {
         Buffer.BlockCopy(nameBuf, 0, data, 6, nameBuf.Length);
 
         return data;
+    }
+
+    private int textureIndexCache;
+    public override void Tick () {
+
+        if (textureIndexCache != PlayerStats.textureIndex) {
+
+            textureIndexCache = PlayerStats.textureIndex;
+
+            UdpStream.Send_ObjectUpdate(ID, GetData());
+        }
     }
 }

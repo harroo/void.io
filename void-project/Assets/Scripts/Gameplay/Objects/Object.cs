@@ -49,7 +49,7 @@ public class Object : MonoBehaviour {
 
         if (!GlobalValues.Hosting && !forceDoPosSync) return;
 
-        if (timer < 0) { timer = 0.25f;
+        if (timer < 0) { timer = 0.04f;
 
             if (posCache != transform.position || rotCache != transform.rotation) {
 
@@ -63,6 +63,9 @@ public class Object : MonoBehaviour {
         Tick();
     }
 
+    private void Start () { Spawn(); }
+
+    public virtual void Spawn () {}
     public virtual void Tick () {}
 
     public void DeleteThisObject () {

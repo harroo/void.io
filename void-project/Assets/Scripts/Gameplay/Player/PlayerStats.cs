@@ -8,8 +8,12 @@ public class PlayerStats : MonoBehaviour {
     private void Awake () { instance = this; }
 
     private int __textureIndex;
-    public static float textureIndex => instance.__textureIndex;
+    public static int textureIndex => instance.__textureIndex;
     public static void SetTextureIndex (int index) { instance.__textureIndex = index; }
+
+    private int __playerLevel;
+    public static int playerLevel => instance.__playerLevel;
+    public static void SetPlayerLevel (int level) { instance.__playerLevel = level; }
 
     private float __forwardForce = 2.0f;
     private float __turnForce = 0.02f;
