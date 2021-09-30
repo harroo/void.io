@@ -179,9 +179,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4548344407346746036}
   - component: {fileID: 4548344407346746027}
-  - component: {fileID: 4548344407346746026}
   - component: {fileID: 4548344407346746024}
-  - component: {fileID: 4548344407346746031}
+  - component: {fileID: 8774103089592284744}
   m_Layer: 0
   m_Name: Player Prefab
   m_TagString: Untagged
@@ -255,27 +254,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4548344407346746026
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4548344407346746030}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &4548344407346746024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,11 +267,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
+  forceDoPosSync: 0
+  forceDontPosSync: 1
   usernameDisplay: {fileID: 4548344406099483613}
   spriteRenderer: {fileID: 4548344407346746027}
   textureIndex: 0
---- !u!60 &4548344407346746031
-PolygonCollider2D:
+--- !u!58 &8774103089592284744
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -306,23 +286,5 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.03, y: 0.08}
-      - {x: -0.06, y: 0.07}
-      - {x: -0.08, y: 0}
-      - {x: -0.08, y: -0.08}
-      - {x: -0.049999997, y: -0.099999994}
-      - {x: 0.02, y: -0.099999994}
-      - {x: 0.08, y: -0.07}
-      - {x: 0.08, y: 0}
-      - {x: 0.03, y: 0.08}
+  serializedVersion: 2
+  m_Radius: 0.08

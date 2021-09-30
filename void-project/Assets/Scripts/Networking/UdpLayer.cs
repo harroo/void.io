@@ -5,14 +5,9 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Collections.Generic;
 
-public class ClientUdp : UnityEngine.MonoBehaviour {
+public class UdpLayer : UnityEngine.MonoBehaviour {
 
     public void Update () {
-
-        // if (!GlobalValues.RunningOnline) return;
-        if (!MainClient.connected) return;
-
-        UdpCore.Tick();
 
         while (UdpCore.recvQueue.Count != 0) {
 
@@ -25,9 +20,11 @@ public class ClientUdp : UnityEngine.MonoBehaviour {
 
         switch (packet[0]) {
 
-            case 0: { //update object pos
+            case UdpMids.UpdateObjectPos: { //update object pos
 
                 int id = BitConverter.ToInt32(packet, 1);
+
+                if (id == GlobalValues.LocalPlayerID) break;
 
                 float x = BitConverter.ToSingle(packet, 5);
                 float y = BitConverter.ToSingle(packet, 9);
@@ -40,12 +37,17 @@ public class ClientUdp : UnityEngine.MonoBehaviour {
     }
 }
 
+public static class UdpMids { //udp message ids
+
+    public const byte UpdateObjectPos = 0;
+}
+
 public static class UdpStream {
 
-    public static void SendObjectPosUpdate (byte[] data) {
+    public static void Send_ObjectPosUpdate (byte[] data) {
 
         byte[] packetBuf = new byte[data.Length + 1];
-        packetBuf[0] = 0;
+        packetBuf[0] = UdpMids.UpdateObjectPos;
         Buffer.BlockCopy(data, 0, packetBuf, 1, data.Length);
 
         UdpCore.sendQueue.Add(packetBuf);
@@ -63,38 +65,9 @@ public static class UdpCore {
     public static List<byte[]> sendQueue = new List<byte[]>();
     public static List<byte[]> recvQueue = new List<byte[]>();
 
-    public static void Initialize () {
+    public static void ClearQueues () {
 
+        sendQueue.Clear();
         recvQueue.Clear();
-
-        serverAddress = GameLoader.address;
-        serverPort = 2586;
-
-        ipp = new IPEndPoint(IPAddress.Any, UnityEngine.Random.Range(4000, 5000));
-        client = new UdpClient(ipp);
-    }
-
-    public static void Tick () {
-
-        try {
-
-            while (UdpCore.client.Available != 0) {
-
-                byte[] recvData = client.Receive(ref UdpCore.ipp);
-
-                recvQueue.Add(recvData);
-            }
-
-            while (sendQueue.Count != 0) {
-
-                client.Send(sendQueue[0], sendQueue[0].Length, serverAddress, serverPort);
-                sendQueue.RemoveAt(0);
-            }
-
-        } catch (Exception ex) {
-
-            Console.Log(LogType.WARN, "UdpCore.Tick(): Caused System.Exception!");
-            Console.Log(LogType.ERROR, ex.Message);
-        }
     }
 }

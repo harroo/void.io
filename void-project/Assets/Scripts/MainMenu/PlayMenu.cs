@@ -11,16 +11,16 @@ public class PlayMenu : MonoBehaviour {
 
         if (addressField.text == "") return;
 
-        GameLoader.hosting = false;
-        GameLoader.address = addressField.text;
+        GlobalValues.Hosting = false;
+        GlobalValues.Address = addressField.text;
 
         SceneManager.LoadScene("Game");
     }
 
     public void HostGame () {
 
-        GameLoader.hosting = true;
-        GameLoader.address = "localhost";
+        GlobalValues.Hosting = true;
+        GlobalValues.Address = "localhost";
 
         SceneManager.LoadScene("Game");
     }

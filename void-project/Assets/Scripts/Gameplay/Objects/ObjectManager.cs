@@ -35,15 +35,16 @@ public class ObjectManager : MonoBehaviour {
             Buffer.BlockCopy(data, index, buf, 0, size);
             index += size;
 
-            LoadObject(type, buf);
+            LoadObject(id, type, buf);
         }
     }
 
     private List<Object> objs = new List<Object>();
 
-    public void LoadObject (int type, byte[] buf) {
+    public void LoadObject (int objID, int type, byte[] buf) {
 
         Object obj = Instantiate(GetPrefab(type), Vector3.zero, Quaternion.identity).GetComponent<Object>();
+        obj.ID = objID;
         obj.Config(buf);
         objs.Add(obj);
     }
