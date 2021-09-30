@@ -99,6 +99,7 @@ public static class ServerLayer {
         clientPoints.Clear();
 
         clientsToDisconnect.Clear();
+        clientsInactivityCache.Clear();
 
         UdpCore.ClearQueues();
         TcpCore.ClearQueues();
@@ -108,6 +109,7 @@ public static class ServerLayer {
     private static List<IPEndPoint> clientPoints = new List<IPEndPoint>();
 
     private static List<TcpClient> clientsToDisconnect = new List<TcpClient>();
+    private static Dictionary<TcpClient, int> clientsInactivityCache = new Dictionary<TcpClient, int>();
 
     public static void Tick () {
 
@@ -159,6 +161,8 @@ public static class ServerLayer {
         HandleLeavingClients();
         ListenToClients();
         TalkToClients();
+
+        KeepAliveCheck();
     }
 
     private static void HandleNewClients () {
@@ -169,6 +173,7 @@ public static class ServerLayer {
             if (client == null) break;
 
             clients.Add(client);
+            clientsInactivityCache.Add(client, 0);
 
             byte[] objectData = ServerSave.GetSave();
             client.GetStream().Write(BitConverter.GetBytes(objectData.Length), 0, 4);
@@ -183,6 +188,7 @@ public static class ServerLayer {
         foreach (TcpClient client in clientsToDisconnect) {
 
             clients.Remove(client);
+            clientsInactivityCache.Remove(client);
 
             try {
 
@@ -218,6 +224,13 @@ public static class ServerLayer {
                 client.GetStream().Read(pbuf, 0, psize);
 
                 TcpCore.sendQueue.Add(pbuf);
+
+                clientsInactivityCache[client] = 0;
+
+            } else {
+
+                clientsInactivityCache[client] =
+                    clientsInactivityCache[client] + 1;
             }
         }
     }
@@ -237,6 +250,38 @@ public static class ServerLayer {
             }
 
             TcpCore.recvQueue.Add(data);
+        }
+    }
+
+    private static float timer;
+    private static void KeepAliveCheck () {
+
+        if (timer > 0) {
+
+            timer -= UnityEngine.Time.deltaTime;
+            return;
+
+        } else timer = 2.0f;
+
+        List<TcpClient> droppedClients = new List<TcpClient>();
+
+        foreach (TcpClient client in clientsInactivityCache.Keys) {
+
+            if (clientsInactivityCache[client] > 482) {
+
+                Console.Log("Client timed out: '<color=white>" + client.Client.RemoteEndPoint.ToString() + "</color>'");
+
+                droppedClients.Add(client);
+            }
+        }
+
+        while (droppedClients.Count != 0) {
+
+            clientsToDisconnect.Add(droppedClients[0]);
+
+            clientsInactivityCache[droppedClients[0]] = 0;
+
+            droppedClients.RemoveAt(0);
         }
     }
 }

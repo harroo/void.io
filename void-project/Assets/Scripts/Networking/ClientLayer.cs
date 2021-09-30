@@ -80,6 +80,7 @@ public static class ClientLayer {
 
             UdpTick();
             TcpTick();
+            KeepAliveTick();
 
         } catch (Exception ex) {
 
@@ -133,5 +134,15 @@ public static class ClientLayer {
                 TcpCore.stream.Write(sendData, 0, sendData.Length);
             }
         }
+    }
+
+    private static float timer;
+    private static void KeepAliveTick () {
+
+        if (timer < 0) { timer = 1.0f;
+
+            TcpStream.Send_KeepAlivePacket();
+
+        } else timer -= UnityEngine.Time.deltaTime;
     }
 }

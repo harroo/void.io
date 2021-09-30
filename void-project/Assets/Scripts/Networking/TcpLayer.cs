@@ -109,6 +109,7 @@ public static class TcpMids { //tcp message ids
     public const byte DeleteObject = 3;
     public const byte CreateObjectWithMeta = 4;
     public const byte ChatMessage = 5;
+    public const byte KeepAlive = 6;
 }
 
 public static class TcpStream {
@@ -172,6 +173,11 @@ public static class TcpStream {
         Buffer.BlockCopy(data, 0, packetBuf, 5, data.Length);
 
         TcpCore.sendQueue.Add(packetBuf);
+    }
+
+    public static void Send_KeepAlivePacket () {
+
+        TcpCore.sendQueue.Add(new byte[1]{TcpMids.KeepAlive});
     }
 }
 
