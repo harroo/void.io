@@ -8,7 +8,16 @@ using System.Threading;
 
 public class Console : MonoBehaviour {
 
-    private List<string> chatList = new List<string>();
+    private static Mutex mutex = new Mutex();
+    private static List<string> chatList = new List<string>();
+    private static void AddChatList (string msg) {
+
+        mutex.WaitOne(); try {
+
+            chatList.Add(msg);
+
+        } finally { mutex.ReleaseMutex(); }
+    }
 
     public static Console instance;
     private void Awake () { instance = this; }
@@ -17,31 +26,14 @@ public class Console : MonoBehaviour {
 
     public int messageCap = 32;
 
-    private Mutex mutex = new Mutex();
-    private List<string> msgQ = new List<string>();
-    public void QueueMessage (string msg) {
+    private void Start () {
 
-        mutex.WaitOne(); try {
-
-            msgQ.Add(msg);
-
-        } finally { mutex.ReleaseMutex(); }
-    }
-    private void Update () {
-
-        mutex.WaitOne(); try {
-
-            while (msgQ.Count != 0) {
-
-                AddMessage(msgQ[0]); msgQ.RemoveAt(0);;
-            }
-
-        } finally { mutex.ReleaseMutex(); }
+        Render();
     }
 
     public void AddMessage (string msg) {
 
-        chatList.Add(msg);
+        AddChatList(msg);
 
         Render();
     }
@@ -57,7 +49,7 @@ public class Console : MonoBehaviour {
             case LogType.WARN:  type = "[  <color=orange>WARN</color>  ]"; break;
         }
 
-        instance.QueueMessage(type + ": " + msg);
+        instance.AddMessage(type + ": " + msg);
 
         switch (logType) {
 
@@ -71,17 +63,30 @@ public class Console : MonoBehaviour {
         Log(LogType.NULL, msg);
     }
 
+    public static void Clear () {
+
+        mutex.WaitOne(); try {
+
+            chatList.Clear();
+
+        } finally { mutex.ReleaseMutex(); }
+    }
+
     private void Render () {
 
-        field.text = "";
+        mutex.WaitOne(); try {
 
-        while (chatList.Count > messageCap)
-            chatList.RemoveAt(0);
+            field.text = "";
 
-        for (int i = 0; i < chatList.Count; ++i) {
+            while (chatList.Count > messageCap)
+                chatList.RemoveAt(0);
 
-            field.text += chatList[i] + "\n";
-        }
+            for (int i = 0; i < chatList.Count; ++i) {
+
+                field.text += chatList[i] + "\n";
+            }
+
+        } finally { mutex.ReleaseMutex(); }
     }
 }
 

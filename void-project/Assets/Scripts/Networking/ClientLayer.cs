@@ -86,6 +86,11 @@ public static class ClientLayer {
 
             Console.Log(LogType.WARN, "ClientLayer.Tick(): Caused System.Exception!");
             Console.Log(LogType.ERROR, ex.Message);
+
+            Kill();
+
+            Console.Log(LogType.OK, "Disconnect handled!");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Crash");
         }
     }
 

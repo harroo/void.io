@@ -8,6 +8,8 @@ public class NetworkInterface : MonoBehaviour {
 
     public void Start () {
 
+        Console.Clear();
+
         if (GlobalValues.Hosting) {
 
             ServerLayer.Init();
