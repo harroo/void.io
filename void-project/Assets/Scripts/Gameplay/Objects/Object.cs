@@ -10,7 +10,12 @@ public class Object : MonoBehaviour {
     [Space()]
     public int ID;
     [Space()]
-    public bool forceDoPosSync, forceDontPosSync;
+    public bool forceDoTick;
+    public bool forceDontTick;
+    public bool forceDoSpawn;
+    public bool forceDontSpawn;
+    public bool forceDoPosSync;
+    public bool forceDontPosSync;
 
     public virtual void Config (byte[] buf) { }
     public virtual byte[] GetData () { return new byte[0]; }
@@ -45,6 +50,8 @@ public class Object : MonoBehaviour {
     private float timer;
     private void Update () {
 
+        TickCheck();
+
         if (forceDontPosSync) return;
 
         if (!GlobalValues.Hosting && !forceDoPosSync) return;
@@ -59,11 +66,20 @@ public class Object : MonoBehaviour {
             }
 
         } else timer -= Time.deltaTime;
-
-        Tick();
     }
 
-    private void Start () { Spawn(); }
+    private void Start () {
+
+        if (forceDontSpawn) return;
+
+        if (GlobalValues.Hosting || forceDoSpawn) Spawn();
+    }
+    private void TickCheck () {
+
+        if (forceDontTick) return;
+
+        if (GlobalValues.Hosting || forceDoTick) Tick();
+    }
 
     public virtual void Spawn () {}
     public virtual void Tick () {}
