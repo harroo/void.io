@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 8774103089592284744}
   m_Layer: 0
   m_Name: Player Prefab
-  m_TagString: Untagged
+  m_TagString: PLAYER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,6 +311,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
+  forceDoTick: 0
+  forceDontTick: 0
+  forceDoSpawn: 0
+  forceDontSpawn: 0
   forceDoPosSync: 0
   forceDontPosSync: 1
   usernameDisplay: {fileID: 4548344406099483613}

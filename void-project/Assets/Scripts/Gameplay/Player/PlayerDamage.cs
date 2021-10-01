@@ -23,6 +23,10 @@ public class PlayerDamage : MonoBehaviour {
                 transform.position = Vector3.zero;
                 _hp = hp;
             }
+
+        } else if (collision.collider.tag != "PLAYER") {
+
+            transform.position = Vector3.zero;
         }
     }
 }
