@@ -11,7 +11,16 @@ public class UdpLayer : UnityEngine.MonoBehaviour {
 
         while (UdpCore.recvQueue.Count != 0) {
 
-            Process(UdpCore.recvQueue[0]);
+            try {
+
+                Process(UdpCore.recvQueue[0]);
+
+            } catch (Exception ex) {
+
+                Console.Log(LogType.WARN, "UdpCore.Process(): Caused System.Exception!");
+                Console.Log(LogType.ERROR, ex.Message);
+            }
+
             UdpCore.recvQueue.RemoveAt(0);
         }
     }

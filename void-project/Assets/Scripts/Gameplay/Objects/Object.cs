@@ -84,8 +84,18 @@ public class Object : MonoBehaviour {
     public virtual void Spawn () {}
     public virtual void Tick () {}
 
+    private bool killFlag = false;
     public void DeleteThisObject () {
 
+        if (killFlag) return;
+        killFlag = true;
+
         TcpStream.Send_DeleteObject(ID);
+    }
+    public void DisposeThisObject () {
+
+        if (!GlobalValues.Hosting) return;
+
+        ServerSave.DeleteObject(ID);
     }
 }

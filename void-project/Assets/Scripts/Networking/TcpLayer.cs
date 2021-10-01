@@ -11,7 +11,16 @@ public class TcpLayer : UnityEngine.MonoBehaviour {
 
         while (TcpCore.recvQueue.Count != 0) {
 
-            Process(TcpCore.recvQueue[0]);
+            try {
+
+                Process(TcpCore.recvQueue[0]);
+
+            } catch (Exception ex) {
+
+                Console.Log(LogType.WARN, "TcpLayer.Process(): Caused System.Exception!");
+                Console.Log(LogType.ERROR, ex.Message);
+            }
+
             TcpCore.recvQueue.RemoveAt(0);
         }
     }

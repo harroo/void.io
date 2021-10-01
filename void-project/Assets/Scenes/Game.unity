@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 623866872}
   - component: {fileID: 623866873}
   - component: {fileID: 623866874}
+  - component: {fileID: 623866875}
   m_Layer: 0
   m_Name: Local Player
   m_TagString: Untagged
@@ -580,6 +581,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
+  forceDoTick: 0
+  forceDontTick: 0
+  forceDoSpawn: 0
+  forceDontSpawn: 0
   forceDoPosSync: 1
   forceDontPosSync: 0
   spriteRenderer: {fileID: 623866867}
@@ -629,6 +634,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6091e41a8c247cf0c963e13451e678c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &623866875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623866866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e25146a782462408568ae3dc65e8d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 4
 --- !u!1 &1094393208
 GameObject:
   m_ObjectHideFlags: 0

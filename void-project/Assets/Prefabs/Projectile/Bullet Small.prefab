@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1771289204904250193}
   - component: {fileID: 1771289204904250194}
   - component: {fileID: 1771289204904250206}
+  - component: {fileID: 2052492209135607148}
   m_Layer: 0
   m_Name: Bullet Small
-  m_TagString: Untagged
+  m_TagString: BULLET
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,6 +151,21 @@ MonoBehaviour:
   forceDoSpawn: 1
   forceDontSpawn: 0
   forceDoPosSync: 0
-  forceDontPosSync: 0
+  forceDontPosSync: 1
   startForce: 12
   aliveTime: 8
+--- !u!114 &2052492209135607148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771289204904250195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9eab3a88676283718848a1d53d92b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 0
+  killingTags: []
+  objectToSpawnOnDestroy: {fileID: 1846054609084054680, guid: c99e3e723a47ca26eaa63827109ac460, type: 3}
