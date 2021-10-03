@@ -70,6 +70,13 @@ public class ObjectManager : MonoBehaviour {
         objs.Add(obj);
     }
 
+    public void CreateEffectObject (int objID, int type, byte[] buf) {
+
+        Object obj = Instantiate(GetPrefab(type), Vector3.zero, Quaternion.identity).GetComponent<Object>();
+        obj.ID = objID;
+        obj.Config(buf);
+    }
+
     public void DeleteObject (int objID) {
 
         Object obj = Array.Find(objs.ToArray(), ctx => ctx.ID == objID);

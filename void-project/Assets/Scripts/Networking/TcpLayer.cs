@@ -106,6 +106,23 @@ public class TcpLayer : UnityEngine.MonoBehaviour {
                 Console.Log("Chat: " + msg);
 
             break; }
+
+            case TcpMids.CreateEffectObject: {
+
+                int id = BitConverter.ToInt32(packet, 1);
+
+                int type = BitConverter.ToInt32(packet, 5);
+
+                byte[] sizeBuf = new byte[4];
+                Buffer.BlockCopy(packet, 9, sizeBuf, 0, sizeBuf.Length);
+                int size = BitConverter.ToInt32(sizeBuf, 0);
+
+                byte[] meta = new byte[size];
+                Buffer.BlockCopy(packet, 13, meta, 0, meta.Length);
+
+                if (id != GlobalValues.LocalPlayerID) ObjectManager.instance.CreateEffectObject(id, type, meta);
+
+            break; }
         }
     }
 }
@@ -119,6 +136,7 @@ public static class TcpMids { //tcp message ids
     public const byte CreateObjectWithMeta = 4;
     public const byte ChatMessage = 5;
     public const byte KeepAlive = 6;
+    public const byte CreateEffectObject = 7;
 }
 
 public static class TcpStream {
@@ -187,6 +205,18 @@ public static class TcpStream {
     public static void Send_KeepAlivePacket () {
 
         TcpCore.sendQueue.Add(new byte[1]{TcpMids.KeepAlive});
+    }
+
+    public static void Send_CreateEffectObject (int id, int type, byte[] data) {
+
+        byte[] packetBuf = new byte[13 + data.Length];
+        packetBuf[0] = TcpMids.CreateEffectObject;
+        Buffer.BlockCopy(BitConverter.GetBytes(id), 0, packetBuf, 1, 4);
+        Buffer.BlockCopy(BitConverter.GetBytes(type), 0, packetBuf, 5, 4);
+        Buffer.BlockCopy(BitConverter.GetBytes(data.Length), 0, packetBuf, 9, 4);
+        Buffer.BlockCopy(data, 0, packetBuf, 13, data.Length);
+
+        TcpCore.sendQueue.Add(packetBuf);
     }
 }
 

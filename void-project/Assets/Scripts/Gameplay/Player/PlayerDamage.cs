@@ -20,11 +20,15 @@ public class PlayerDamage : MonoBehaviour {
 
             if (_hp <= 0) {
 
+                EffectCreator.CreateEffect(2, transform.position, transform.eulerAngles);
+
                 transform.position = Vector3.zero;
                 _hp = hp;
             }
 
         } else if (collision.collider.tag != "PLAYER") {
+
+            EffectCreator.CreateEffect(2, transform.position, transform.eulerAngles);
 
             transform.position = Vector3.zero;
         }
