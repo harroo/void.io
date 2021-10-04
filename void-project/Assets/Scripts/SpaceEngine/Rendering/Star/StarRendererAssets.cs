@@ -15,4 +15,7 @@ public class StarRendererAssets : MonoBehaviour {
 
     public static int RandomRange ()
         => Random.Range(0, instance.burstMaterials.Length - 1);
+
+    public static int Range ()
+        => instance.burstMaterials.Length;
 }

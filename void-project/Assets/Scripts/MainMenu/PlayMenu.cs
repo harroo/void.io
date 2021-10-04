@@ -14,7 +14,7 @@ public class PlayMenu : MonoBehaviour {
         GlobalValues.Hosting = false;
         GlobalValues.Address = addressField.text;
 
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Client");
     }
 
     public void HostGame () {
@@ -22,6 +22,6 @@ public class PlayMenu : MonoBehaviour {
         GlobalValues.Hosting = true;
         GlobalValues.Address = "localhost";
 
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Modes");
     }
 }

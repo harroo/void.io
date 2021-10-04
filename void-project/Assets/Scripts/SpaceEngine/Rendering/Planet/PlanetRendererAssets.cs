@@ -21,4 +21,10 @@ public class PlanetRendererAssets : MonoBehaviour {
 
     public static int RandomOverlayRange ()
         => Random.Range(0, instance.overlayTextures.Length - 1);
+
+    public static int BaseRange ()
+        => instance.baseTextures.Length;
+
+    public static int OverlayRange ()
+        => instance.overlayTextures.Length;
 }
