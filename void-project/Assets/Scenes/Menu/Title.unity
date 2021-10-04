@@ -6869,10 +6869,18 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Void.io is a Sci-Fi, Spacey, themed Arcade-Game with an infinite Dungeon-Crawler
-    esc play style. \n\nInspired by Diep.io and the many many Dungeon Crawlers on
-    Itch.io.\n\nGame Programming and Art: <color=#77b5ff>Haro</color>.\nSpelling
-    and Orthography: <color=#cc77ff>Lia</color>."
+  m_Text: 'Void.io is a Sci-Fi, Spacey, themed Arcade-Game in which the Player is
+    greeted with a simple, yet fun, Game-Loop.
+
+
+    Inspired by Diep.io and the
+    many many brilliant Games at Itch.io.
+
+
+    Game Programming and Art: <color=#77b5ff>Haro</color>.
+
+    Spelling
+    and Orthography: <color=#cc77ff>Lia</color>.'
 --- !u!222 &552242701
 CanvasRenderer:
   m_ObjectHideFlags: 0
