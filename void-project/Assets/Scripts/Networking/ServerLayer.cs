@@ -244,9 +244,21 @@ public static class ServerLayer {
 
             foreach (TcpClient client in clients) {
 
-                client.GetStream().Write(BitConverter.GetBytes(data.Length), 0, 4);
+                try {
 
-                client.GetStream().Write(data, 0, data.Length);
+                    client.GetStream().Write(BitConverter.GetBytes(data.Length), 0, 4);
+
+                    client.GetStream().Write(data, 0, data.Length);
+
+                } catch (Exception ex) {
+
+                    Console.Log(LogType.WARN, "Error with communications to client!");
+                    Console.Log(LogType.ERROR, ex.Message);
+
+                    clientsToDisconnect.Add(client);
+
+                    Console.Log(LogType.OK, "Client disconnect handled successfully.");
+                }
             }
 
             TcpCore.recvQueue.Add(data);
