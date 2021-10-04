@@ -14,7 +14,7 @@ public static class ClientLayer {
         Console.Log("ClientLayer.Init(): Calling...");
 
         serverAddress = GlobalValues.Address;
-        serverPortUdp = 2586;
+        serverPortUdp = 4566;
 
         //connect UDP
 
@@ -27,7 +27,7 @@ public static class ClientLayer {
 
         //connect TCP
 
-        TcpCore.client = new TcpClient(serverAddress, 2486);
+        TcpCore.client = new TcpClient(serverAddress, 4565);
         TcpCore.stream = TcpCore.client.GetStream();
 
         byte[] sizeBuf = new byte[4];

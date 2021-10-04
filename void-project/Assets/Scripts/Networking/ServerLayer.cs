@@ -15,14 +15,14 @@ public static class ServerLayer {
 
         //start udp
 
-        UdpCore.ipp = new IPEndPoint(IPAddress.Any, 2586);
+        UdpCore.ipp = new IPEndPoint(IPAddress.Any, 4566);
         UdpCore.client = new UdpClient(UdpCore.ipp);
 
         //start tcp
 
         try {
 
-            TcpListener listener = new TcpListener(IPAddress.Any, 2486);
+            TcpListener listener = new TcpListener(IPAddress.Any, 4565);
             listener.Start();
 
             clientCatchThread = new Thread(()=>ClientCatchLoop(listener));
