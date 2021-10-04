@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  forceDoTick: 0
+  forceDoTick: 1
   forceDontTick: 0
   forceDoSpawn: 0
   forceDontSpawn: 0
