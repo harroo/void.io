@@ -6,6 +6,8 @@ TagManager:
   tags:
   - BULLET
   - PLAYER
+  - INSTA_KILL
+  - DAMAGING
   layers:
   - Default
   - TransparentFX

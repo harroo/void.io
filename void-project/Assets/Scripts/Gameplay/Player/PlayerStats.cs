@@ -15,6 +15,10 @@ public class PlayerStats : MonoBehaviour {
     public static int playerLevel => instance.__playerLevel;
     public static void SetPlayerLevel (int level) { instance.__playerLevel = level; }
 
+    private int __bulletDamage = 1;
+    public static int bulletDamage => instance.__bulletDamage;
+    public static void SetBulletDamage (int level) { instance.__bulletDamage = level; }
+
     private float __forwardForce = 2.0f;
     private float __turnForce = 0.02f;
     private float __brakePower = 2.0f;

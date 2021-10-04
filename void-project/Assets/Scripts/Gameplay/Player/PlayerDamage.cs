@@ -14,9 +14,9 @@ public class PlayerDamage : MonoBehaviour {
 
     private void OnCollisionEnter2D (Collision2D collision) {
 
-        if (collision.collider.tag == "BULLET") {
+        if (collision.collider.tag == "DAMAGING") {
 
-            _hp--;
+            _hp -= collision.collider.GetComponent<Damager>().damage;
 
             if (_hp <= 0) {
 
@@ -26,7 +26,7 @@ public class PlayerDamage : MonoBehaviour {
                 _hp = hp;
             }
 
-        } else if (collision.collider.tag != "PLAYER") {
+        } else if (collision.collider.tag != "INSTA_KILL") {
 
             EffectCreator.CreateEffect(2, transform.position, transform.eulerAngles);
 

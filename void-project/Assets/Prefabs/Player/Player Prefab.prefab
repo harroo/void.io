@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 4548344407346746027}
   - component: {fileID: 4548344407346746024}
   - component: {fileID: 8774103089592284744}
+  - component: {fileID: -6913899524346207518}
   m_Layer: 0
   m_Name: Player Prefab
   m_TagString: BULLET
@@ -336,3 +337,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
+--- !u!114 &-6913899524346207518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4548344407346746030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24967fab06b32dcc78a010318a453825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2

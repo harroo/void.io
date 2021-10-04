@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 1771289204904250194}
   - component: {fileID: 1771289204904250206}
   - component: {fileID: 2052492209135607148}
+  - component: {fileID: 6096241382115657342}
   m_Layer: 0
   m_Name: Bullet Small
-  m_TagString: BULLET
+  m_TagString: DAMAGING
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,3 +170,16 @@ MonoBehaviour:
   hitPoints: 0
   killingTags: []
   objectToSpawnOnDestroy: {fileID: 1846054609084054680, guid: c99e3e723a47ca26eaa63827109ac460, type: 3}
+--- !u!114 &6096241382115657342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771289204904250195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24967fab06b32dcc78a010318a453825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

@@ -25,7 +25,7 @@ public class PlayerGunController : MonoBehaviour {
             transform.up = getFaceMouseRotation();
             transform.Translate(Vector3.up * 0.15f);
 
-            BulletCreator.CreateBullet(1, transform.position, transform.eulerAngles);
+            BulletCreator.CreateBullet(1, PlayerStats.bulletDamage, transform.position, transform.eulerAngles);
 
             transform.Translate(Vector3.up * -0.15f);
             transform.up = cache;

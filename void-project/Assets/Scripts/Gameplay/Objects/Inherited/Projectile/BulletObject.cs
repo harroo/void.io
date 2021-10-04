@@ -21,6 +21,8 @@ public class BulletObject : Object {
             0,
             BitConverter.ToSingle(buf, 8)
         );
+
+        GetComponent<Damager>().damage = BitConverter.ToInt32(buf, 12);
     }
 
     public override void Spawn () {
