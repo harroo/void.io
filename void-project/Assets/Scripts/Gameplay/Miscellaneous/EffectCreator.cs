@@ -12,6 +12,6 @@ public static class EffectCreator {
         Buffer.BlockCopy(BitConverter.GetBytes(pos.y), 0, effectData, 4, 4);
         Buffer.BlockCopy(BitConverter.GetBytes(rot.z), 0, effectData, 8, 4);
 
-        TcpStream.Send_CreateEffectObject(new System.Random().Next(111111111, 999999999), effectType, effectData);
+        TcpStream.Send_CreateEffectObject(UnityEngine.Random.Range(-999999999, 999999999), effectType, effectData);
     }
 }

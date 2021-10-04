@@ -13,6 +13,6 @@ public static class BulletCreator {
         Buffer.BlockCopy(BitConverter.GetBytes(rot.z), 0, bulletData, 8, 4);
         Buffer.BlockCopy(BitConverter.GetBytes(damage), 0, bulletData, 12, 4);
 
-        TcpStream.Send_CreateObject(new System.Random().Next(111111111, 999999999), bulletType, bulletData);
+        TcpStream.Send_CreateObject(UnityEngine.Random.Range(-999999999, 999999999), bulletType, bulletData);
     }
 }

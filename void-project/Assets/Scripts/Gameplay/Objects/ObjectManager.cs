@@ -16,7 +16,7 @@ public class ObjectManager : MonoBehaviour {
 
     public void LoadData (byte[] data) {
 
-        Debug.Log("Loading from received buffer: " + data.Length);
+        Console.Log("Loading from received buffer: " + data.Length);
 
         int index = 0;
 

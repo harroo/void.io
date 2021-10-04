@@ -34,7 +34,7 @@ public class Populator : MonoBehaviour {
         Buffer.BlockCopy(BitConverter.GetBytes(0), 0, planetData, 8, 4);
         Buffer.BlockCopy(BitConverter.GetBytes(seed), 0, planetData, 12, 4);
 
-        TcpStream.Send_CreateObject(new System.Random().Next(111111111, 999999999), 3, planetData);
+        TcpStream.Send_CreateObject(UnityEngine.Random.Range(-999999999, 999999999), 3, planetData);
     }
 
     private void CreateNebula (float x, float y, int seed) {
@@ -45,6 +45,6 @@ public class Populator : MonoBehaviour {
         Buffer.BlockCopy(BitConverter.GetBytes(0), 0, nebulaData, 8, 4);
         Buffer.BlockCopy(BitConverter.GetBytes(seed), 0, nebulaData, 12, 4);
 
-        TcpStream.Send_CreateObject(new System.Random().Next(111111111, 999999999), 4, nebulaData);
+        TcpStream.Send_CreateObject(UnityEngine.Random.Range(-999999999, 999999999), 4, nebulaData);
     }
 }
