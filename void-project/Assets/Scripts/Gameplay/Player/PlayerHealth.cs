@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour {
 
         healthBar.value = health;
 
-        if (regenTimer < 0) { regenTimer = 4.0f;
+        if (regenTimer < 0) { regenTimer = 8.0f;
 
             Heal(1);
 
