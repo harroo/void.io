@@ -20,9 +20,11 @@ public class ObjectManager : MonoBehaviour {
 
         data = CompressionUtility.GZipCompression.Decompress(data);
 
+        Console.Log("After Decompress: " + data.Length);
+
         int index = 0;
 
-        while (index < data.Length) {
+        while (index < data.Length) { Console.Log(index.ToString());
 
             int size = BitConverter.ToInt32(data, index);
             index += 4;
@@ -36,6 +38,7 @@ public class ObjectManager : MonoBehaviour {
             float px = BitConverter.ToSingle(data, index); index += 4;
             float py = BitConverter.ToSingle(data, index); index += 4;
             float pz = BitConverter.ToSingle(data, index); index += 4;
+            Console.Log(index.ToString()+":"+size.ToString()+":"+type.ToString());
 
             byte[] buf = new byte[size];
             Buffer.BlockCopy(data, index, buf, 0, size);

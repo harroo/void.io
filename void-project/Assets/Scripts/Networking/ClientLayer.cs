@@ -32,14 +32,22 @@ public static class ClientLayer {
 
         byte[] sizeBuf = new byte[4];
         TcpCore.stream.Read(sizeBuf, 0, 4);
-        int size = BitConverter.ToInt32(sizeBuf, 0);
+        int size = BitConverter.ToInt32(sizeBuf, 0);Console.Log(size.ToString());
 
         if (size != 0) {
 
-            byte[] packetBuf = new byte[size];
-            TcpCore.stream.Read(packetBuf, 0, size);
+            byte[] packetBuf = new byte[1];
 
-            ObjectManager.instance.LoadData(packetBuf);
+            System.Collections.Generic.List<byte> buffer
+                = new System.Collections.Generic.List<byte>();
+            for (int i = 0; i < size; ++i) {
+
+                TcpCore.stream.Read(packetBuf, 0, 1);
+
+                buffer.Add(packetBuf[0]);
+            }
+
+            ObjectManager.instance.LoadData(buffer.ToArray());
         }
 
         TcpCore.connected = true;

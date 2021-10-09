@@ -36,9 +36,11 @@ public static class ServerSave {
             foreach (byte b in kvp.Value) buffer.Add(b);
         }
 
-        Console.Log("Sent save buffer, size: " + buffer.Count.ToString());
+        byte[] data = CompressionUtility.GZipCompression.Compress(buffer.ToArray());
 
-        return CompressionUtility.GZipCompression.Compress(buffer.ToArray());
+        Console.Log("Sent save buffer, size: " + data.Length.ToString());
+
+        return data;
     }
 
     public static void CreateNewObject (int objectID, int type) {
