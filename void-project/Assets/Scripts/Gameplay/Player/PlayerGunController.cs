@@ -19,7 +19,7 @@ public class PlayerGunController : MonoBehaviour {
 
         if (Input.GetMouseButton(0)) {
 
-            reloadTimer = 0.5f;
+            reloadTimer = 1.5f;
 
             var cache = transform.up;
             transform.up = getFaceMouseRotation();
