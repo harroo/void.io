@@ -7,6 +7,12 @@ public class Populator : MonoBehaviour {
 
     private void Start () {
 
+        CreateStarSystem(
+            UnityEngine.Random.Range(-20, 20),
+            UnityEngine.Random.Range(-20, 20),
+            UnityEngine.Random.Range(-99, 99)
+        );
+
         for (int i = 0; i < UnityEngine.Random.Range(2, 6); ++i) {
 
             CreateStarSystem(
