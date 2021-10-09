@@ -5,13 +5,13 @@ public class PlayerAnimationController : MonoBehaviour {
 
     public SpriteRenderer sRenderer;
 
-    public PlayerAnimationSet lvl1_set;
+    public PlayerAnimationSet s1_set;
 
     private PlayerAnimationSet currentSet () {
 
-        switch (PlayerStats.playerLevel) {
+        switch (PlayerStats.shipID) {
 
-            case 1: default: return lvl1_set;
+            case 1: default: return s1_set;
         }
     }
 

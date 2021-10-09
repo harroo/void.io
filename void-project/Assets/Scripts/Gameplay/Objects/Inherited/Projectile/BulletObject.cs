@@ -8,6 +8,13 @@ public class BulletObject : Object {
     public float startForce;
     public float aliveTime;
 
+    public int creatorID;
+
+    public override int GetAttackingID () {
+
+        return creatorID;
+    }
+
     public override void Config (byte[] buf) {
 
         transform.position = new Vector3(
@@ -22,7 +29,10 @@ public class BulletObject : Object {
             BitConverter.ToSingle(buf, 8)
         );
 
-        GetComponent<Damager>().damage = BitConverter.ToInt32(buf, 12);
+        startForce += BitConverter.ToInt32(buf, 12);
+        GetComponent<Damager>().damage = BitConverter.ToInt32(buf, 16);
+
+        creatorID += BitConverter.ToInt32(buf, 20);
     }
 
     public override void Spawn () {

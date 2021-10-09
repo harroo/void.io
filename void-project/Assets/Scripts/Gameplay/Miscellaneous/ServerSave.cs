@@ -38,7 +38,7 @@ public static class ServerSave {
 
         Console.Log("Sent save buffer, size: " + buffer.Count.ToString());
 
-        return buffer.ToArray();
+        return CompressionUtility.GZipCompression.Compress(buffer.ToArray());
     }
 
     public static void CreateNewObject (int objectID, int type) {

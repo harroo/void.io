@@ -29,6 +29,9 @@ public class SolarSystemObject : Object {
         GameObject myStar = Instantiate(star, transform.position, transform.rotation);
         myStar.transform.SetParent(transform);
         myStar.GetComponent<StarRenderer>().Render(GenStar());
+        myStar.transform.Translate(Vector3.up * PerlinRand(40));
+
+        myStar.AddComponent<StarIndexer>();
 
         for (int i = 0; i < PerlinRand(16); ++i) {
 
@@ -39,6 +42,8 @@ public class SolarSystemObject : Object {
             myPlanet.transform.Rotate(0, 0, PerlinRand(360));
             myPlanet.transform.Translate(Vector3.up * PerlinRand(40));
 
+            myPlanet.AddComponent<PlanetIndexer>();
+
             for (int ii = 0; ii < PerlinRand(16); ++ii) {
 
                 GameObject myMoon = Instantiate(planet, myPlanet.transform.position, myPlanet.transform.rotation);
@@ -47,6 +52,8 @@ public class SolarSystemObject : Object {
 
                 myMoon.transform.Rotate(0, 0, PerlinRand(360));
                 myMoon.transform.Translate(Vector3.up * PerlinRand(20));
+
+                myMoon.AddComponent<PlanetIndexer>();
             }
         }
     }

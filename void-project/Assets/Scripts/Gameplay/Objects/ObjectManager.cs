@@ -18,6 +18,8 @@ public class ObjectManager : MonoBehaviour {
 
         Console.Log("Loading from received buffer: " + data.Length);
 
+        data = CompressionUtility.GZipCompression.Decompress(data);
+
         int index = 0;
 
         while (index < data.Length) {
@@ -94,6 +96,13 @@ public class ObjectManager : MonoBehaviour {
 
         Object obj = Array.Find(objs.ToArray(), ctx => ctx.ID == objID);
         obj.UpdatePos(x, y, rot);
+    }
+
+    public Object ById (int objID) {
+
+        Object obj = null;
+        try { obj = Array.Find(objs.ToArray(), ctx => ctx.ID == objID); } catch {}
+        return obj;
     }
 
     public void Clear () {

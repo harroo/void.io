@@ -8,4 +8,5 @@ public static class GlobalValues {
     public static string GetUsername () => UnityEngine.PlayerPrefs.GetString("USERNAME", "Player");
 
     public static int LocalPlayerID;
+    public static int LatestAttackingID;
 }

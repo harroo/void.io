@@ -17,6 +17,11 @@ public class Object : MonoBehaviour {
     public bool forceDoPosSync;
     public bool forceDontPosSync;
 
+    public virtual int GetAttackingID () {
+
+        return ID;
+    }
+
     public virtual void Config (byte[] buf) { }
     public virtual byte[] GetData () { return new byte[0]; }
 
@@ -81,8 +86,14 @@ public class Object : MonoBehaviour {
         if (GlobalValues.Hosting || forceDoTick) Tick();
     }
 
+    private void OnDestroy () {
+
+        if (GlobalValues.Hosting) Despawn();
+    }
+
     public virtual void Spawn () {}
     public virtual void Tick () {}
+    public virtual void Despawn () {}
 
     private bool killFlag = false;
     public void DeleteThisObject () {

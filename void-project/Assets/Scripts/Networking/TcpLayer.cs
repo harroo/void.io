@@ -123,6 +123,16 @@ public class TcpLayer : UnityEngine.MonoBehaviour {
                 if (id != GlobalValues.LocalPlayerID) ObjectManager.instance.CreateEffectObject(id, type, meta);
 
             break; }
+
+            case TcpMids.AwardXP: {
+
+                int recvID = BitConverter.ToInt32(packet, 1);
+
+                int amount = BitConverter.ToInt32(packet, 5);
+
+                if (recvID == GlobalValues.LocalPlayerID) PlayerXPManager.AddXP(amount);
+
+            break; }
         }
     }
 }
@@ -137,6 +147,7 @@ public static class TcpMids { //tcp message ids
     public const byte ChatMessage = 5;
     public const byte KeepAlive = 6;
     public const byte CreateEffectObject = 7;
+    public const byte AwardXP = 8;
 }
 
 public static class TcpStream {
@@ -215,6 +226,16 @@ public static class TcpStream {
         Buffer.BlockCopy(BitConverter.GetBytes(type), 0, packetBuf, 5, 4);
         Buffer.BlockCopy(BitConverter.GetBytes(data.Length), 0, packetBuf, 9, 4);
         Buffer.BlockCopy(data, 0, packetBuf, 13, data.Length);
+
+        TcpCore.sendQueue.Add(packetBuf);
+    }
+
+    public static void Send_AwardXP (int recvID, int amount) {
+
+        byte[] packetBuf = new byte[9];
+        packetBuf[0] = TcpMids.AwardXP;
+        Buffer.BlockCopy(BitConverter.GetBytes(recvID), 0, packetBuf, 1, 4);
+        Buffer.BlockCopy(BitConverter.GetBytes(amount), 0, packetBuf, 5, 4);
 
         TcpCore.sendQueue.Add(packetBuf);
     }

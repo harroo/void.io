@@ -5,17 +5,17 @@ public class PlayerGunController : MonoBehaviour {
 
     private void Update () {
 
-        switch (PlayerStats.playerLevel) {
+        switch (PlayerStats.shipID) {
 
-            case 1: default: lvl1_Tick(); break;
+            case 1: default: s1_Tick(); break;
         }
     }
 
     private float reloadTimer;
 
-    private void lvl1_Tick () {
+    private void s1_Tick () {
 
-        if (reloadTimer > 0) { reloadTimer -= Time.deltaTime; return; }
+        if (reloadTimer > 0) { reloadTimer -= Time.deltaTime * PlayerStats.reloadSpeed; return; }
 
         if (Input.GetMouseButton(0)) {
 
@@ -25,7 +25,7 @@ public class PlayerGunController : MonoBehaviour {
             transform.up = getFaceMouseRotation();
             transform.Translate(Vector3.up * 0.15f);
 
-            BulletCreator.CreateBullet(1, PlayerStats.bulletDamage, transform.position, transform.eulerAngles);
+            BulletCreator.CreateBullet(1, PlayerStats.bulletForce, PlayerStats.bulletDamage, transform.position, transform.eulerAngles);
 
             transform.Translate(Vector3.up * -0.15f);
             transform.up = cache;
