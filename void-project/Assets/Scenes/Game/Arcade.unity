@@ -297,6 +297,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1131079704966852285, guid: fab3c80518d1f1a9f9bc0afd9b672d35, type: 3}
   m_PrefabInstance: {fileID: 1131079704478784841}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &760757663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 760757663, guid: 1bbacbc0789b0d450a53ed235ff3fe53, type: 3}
+  m_PrefabInstance: {fileID: 1885798125781519916}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &992487717
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +898,10 @@ PrefabInstance:
       propertyPath: upgradeOverlay
       value: 
       objectReference: {fileID: 1199498457}
+    - target: {fileID: 1131079704966852276, guid: fab3c80518d1f1a9f9bc0afd9b672d35, type: 3}
+      propertyPath: pointsReminder
+      value: 
+      objectReference: {fileID: 760757663}
     - target: {fileID: 1131079704966852278, guid: fab3c80518d1f1a9f9bc0afd9b672d35, type: 3}
       propertyPath: healthBar
       value: 
@@ -959,6 +974,10 @@ PrefabInstance:
     - target: {fileID: 1885798123969387674, guid: 1bbacbc0789b0d450a53ed235ff3fe53, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885798124182526195, guid: 1bbacbc0789b0d450a53ed235ff3fe53, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -84.3501
       objectReference: {fileID: 0}
     - target: {fileID: 1885798124219794944, guid: 1bbacbc0789b0d450a53ed235ff3fe53, type: 3}
       propertyPath: m_AnchorMin.y
