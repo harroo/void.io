@@ -14,7 +14,7 @@ public class ThermonuclearDetector : MonoBehaviour {
 
             if (overlay.activeSelf)
                 if (StarIndex.CheckIfInRange(transform.position, 0.32f))
-                    if (Random.Range(0, 2) == 0) PlayerHealth.Damage(1);
+                    if (Random.Range(0, 4) == 0) PlayerHealth.Damage(1);
 
         } else timer -= Time.deltaTime;
     }
