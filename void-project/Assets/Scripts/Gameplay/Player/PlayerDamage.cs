@@ -10,12 +10,16 @@ public class PlayerDamage : MonoBehaviour {
             Object obj = collision.collider.GetComponent<Object>();
             GlobalValues.LatestAttackingID = obj == null ? 0 : obj.GetAttackingID();
 
+            if (GlobalValues.LatestAttackingID == GlobalValues.LocalPlayerID) return;
+
             PlayerHealth.Damage(collision.collider.GetComponent<Damager>().damage);
 
         } else if (collision.collider.tag != "INSTA_KILL") {
 
             Object obj = collision.collider.GetComponent<Object>();
             GlobalValues.LatestAttackingID = obj == null ? 0 : obj.GetAttackingID();
+
+            if (GlobalValues.LatestAttackingID == GlobalValues.LocalPlayerID) return;
 
             PlayerHealth.Damage(69420); //insane amnt damage, instant kill
         }
