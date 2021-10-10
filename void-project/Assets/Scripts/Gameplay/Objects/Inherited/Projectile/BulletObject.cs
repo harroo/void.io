@@ -10,6 +10,8 @@ public class BulletObject : Object {
 
     public int creatorID;
 
+    public override string Type => "BULLET";
+
     public override int GetAttackingID () {
 
         return creatorID;

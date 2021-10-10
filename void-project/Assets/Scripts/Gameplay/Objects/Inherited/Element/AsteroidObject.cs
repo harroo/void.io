@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class AsteroidObject : Object {
 
+    public override string Type => "ASTEROID";
+
     public override void Config (byte[] buf) {
 
         transform.position = new Vector3(

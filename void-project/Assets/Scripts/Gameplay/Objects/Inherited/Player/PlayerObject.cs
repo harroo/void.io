@@ -17,6 +17,8 @@ public class PlayerObject : Object {
         set { usernameDisplay.text = value; }
     }
 
+    public override string Type => "PLAYER_SHIP";
+
     public int textureIndex;
 
     public override void Config (byte[] data) {

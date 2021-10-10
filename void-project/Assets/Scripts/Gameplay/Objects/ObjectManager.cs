@@ -24,7 +24,7 @@ public class ObjectManager : MonoBehaviour {
 
         int index = 0;
 
-        while (index < data.Length) { Console.Log(index.ToString());
+        while (index < data.Length) {
 
             int size = BitConverter.ToInt32(data, index);
             index += 4;
@@ -38,7 +38,6 @@ public class ObjectManager : MonoBehaviour {
             float px = BitConverter.ToSingle(data, index); index += 4;
             float py = BitConverter.ToSingle(data, index); index += 4;
             float pz = BitConverter.ToSingle(data, index); index += 4;
-            Console.Log(index.ToString()+":"+size.ToString()+":"+type.ToString());
 
             byte[] buf = new byte[size];
             Buffer.BlockCopy(data, index, buf, 0, size);
@@ -101,12 +100,56 @@ public class ObjectManager : MonoBehaviour {
         obj.UpdatePos(x, y, rot);
     }
 
+
     public Object ById (int objID) {
 
         Object obj = null;
         try { obj = Array.Find(objs.ToArray(), ctx => ctx.ID == objID); } catch {}
         return obj;
     }
+
+    public Object Closest (Object tobj) {
+
+        Object closestObject = null;
+        float closestDistance = Mathf.Infinity, distance = 0;
+
+        foreach (var obj in objs) {
+
+            if (obj.Type == "BULLET") continue;
+            if (obj == tobj) continue;
+
+            distance = (tobj.transform.position - obj.transform.position).magnitude;
+            if (distance < closestDistance) {
+
+                closestDistance = distance;
+                closestObject = obj;
+            }
+        }
+
+        return closestObject;
+    }
+
+    public Object ClosestInRange (Object tobj, float range) {
+
+        Object closestObject = null;
+        float closestDistance = Mathf.Infinity, distance = 0;
+
+        foreach (var obj in objs) {
+
+            if (obj.Type == "BULLET") continue;
+            if (obj == tobj) continue;
+
+            distance = (tobj.transform.position - obj.transform.position).magnitude;
+            if (distance < closestDistance && distance < range) {
+
+                closestDistance = distance;
+                closestObject = obj;
+            }
+        }
+
+        return closestObject;
+    }
+
 
     public void Clear () {
 

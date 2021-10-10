@@ -17,6 +17,8 @@ public class Object : MonoBehaviour {
     public bool forceDoPosSync;
     public bool forceDontPosSync;
 
+    public virtual string Type => "UNKNOWN";
+
     public virtual int GetAttackingID () {
 
         return ID;
@@ -75,6 +77,8 @@ public class Object : MonoBehaviour {
 
     private void Start () {
 
+        Asign();
+
         if (forceDontSpawn) return;
 
         if (GlobalValues.Hosting || forceDoSpawn) Spawn();
@@ -92,6 +96,7 @@ public class Object : MonoBehaviour {
     }
 
     public virtual void Spawn () {}
+    public virtual void Asign () {}
     public virtual void Tick () {}
     public virtual void Despawn () {}
 

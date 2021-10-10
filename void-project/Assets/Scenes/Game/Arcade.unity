@@ -187,7 +187,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &603623280
 GameObject:
@@ -350,7 +350,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &992487720
 MonoBehaviour:
@@ -434,6 +434,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aad815cf560a757e8d5d0d3ffc0441b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1164535068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1164535069}
+  - component: {fileID: 1164535070}
+  m_Layer: 0
+  m_Name: BotShip Populator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1164535069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164535068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1164535070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164535068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27529150e0528bec48dd75d54077f3ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max: 12
+  shipInfos:
+  - infoName: lvl1
+    hp: 4
+    forwardForce: 2
+    turnForce: 0.002
+    reloadSpeed: 1
+    bulletForceAdd: 0
+    effectID: 2
+    bulletDamage: 2
+    set:
+      idle: 0
+      forward: 1
+      left: 2
+      right: 3
 --- !u!1 &1199498457 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1885798124655536885, guid: 1bbacbc0789b0d450a53ed235ff3fe53, type: 3}
@@ -587,7 +645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2566305444222176089, guid: f8c56f9fa7379a00c8f485231fb32447, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2566305444222176089, guid: f8c56f9fa7379a00c8f485231fb32447, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -618,7 +676,7 @@ GameObject:
   - component: {fileID: 1589427115}
   - component: {fileID: 1589427114}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Mini Map Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -679,7 +737,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1654899383
 GameObject:
@@ -771,7 +829,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1903876516 stripped
 GameObject:
@@ -944,7 +1002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131079704966852285, guid: fab3c80518d1f1a9f9bc0afd9b672d35, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1131079704966852285, guid: fab3c80518d1f1a9f9bc0afd9b672d35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1065,7 +1123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1885798124531950817, guid: 1bbacbc0789b0d450a53ed235ff3fe53, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1885798124531950817, guid: 1bbacbc0789b0d450a53ed235ff3fe53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
