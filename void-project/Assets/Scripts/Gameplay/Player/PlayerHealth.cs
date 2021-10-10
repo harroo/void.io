@@ -68,10 +68,12 @@ public class PlayerHealth : MonoBehaviour {
 
         if (GlobalValues.LatestAttackingID != 0) {
 
-            TcpStream.Send_AwardXP(GlobalValues.LatestAttackingID, 100 + (PlayerXPManager.instance.xp / 4));
+            TcpStream.Send_AwardXP(GlobalValues.LatestAttackingID, 100 + (PlayerXPManager.instance.xp / 2));
             GlobalValues.LatestAttackingID = 0;
         }
 
+        int xpCache = PlayerXPManager.instance.xp / 3;
         PlayerXPManager.Reset();
+        PlayerXPManager.AddXP(xpCache);
     }
 }
