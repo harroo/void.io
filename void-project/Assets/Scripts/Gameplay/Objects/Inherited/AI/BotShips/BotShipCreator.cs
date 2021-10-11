@@ -13,15 +13,21 @@ public class BotShipCreator : MonoBehaviour {
 
     public BotShipInfo[] shipInfos;
 
+    private float timer;
+
     private void Update () {
 
-        if (asos.Count >= max) return;
+        if (timer < 0) { timer = 1.0f;
 
-        BotShipSender.CreateBotShip(
-            UnityEngine.Random.Range(-60, 60),
-            UnityEngine.Random.Range(-60, 60),
-            shipInfos[UnityEngine.Random.Range(0, shipInfos.Length)]
-        );
+            if (asos.Count >= max) return;
+
+            BotShipSender.CreateBotShip(
+                UnityEngine.Random.Range(-60, 60),
+                UnityEngine.Random.Range(-60, 60),
+                shipInfos[UnityEngine.Random.Range(0, shipInfos.Length)]
+            );
+
+        } else timer -= Time.deltaTime;
     }
 
     private List<Object> asos = new List<Object>();
@@ -86,6 +92,8 @@ public static class BotShipSender {
         "Joe Bob", "Jamason", "Hayley", "Bilo", "Jen", "Kira", "L", "N", "I", "You", "Eye", "El Mayo",
         "Dead", "Windows User", "Linux User", "Mac User", "Gei", "Gie", "Username!", ":Emoji:", "o",
         "Shrek", "Srek", "Serms", "Serm", "DT", "dtfm8", "m9", "<3", "UwU", "owo", "Ulrich", "Ulrich",
-        "$#%^&(#)!", "Bork", "steve", "missel", "Wayne Kerr", "ninja", "tojimo", "sexpert", "Sex Kid"
+        "$#%^&(#)!", "Bork", "steve", "missel", "Wayne Kerr", "ninja", "tojimo", "sexpert", "Sex Kid",
+        "Batman", "Superman", "Wonderwoman", "Wonder Woman", "Dude", "Duder", "Jimbob", "Jaybob", ":)",
+        "Adam", "Jean", "Ola", "Minch", "Munich", "Anja", "Curvey", "Carly", "Shredder", "Schreidier"
     };
 }
