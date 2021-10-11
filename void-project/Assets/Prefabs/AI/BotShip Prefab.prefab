@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 725020993628857118}
   - component: {fileID: -3789339453311947176}
   - component: {fileID: 7747888481723419456}
+  - component: {fileID: -4867001957853514057}
   m_Layer: 0
   m_Name: BotShip Prefab
   m_TagString: BULLET
@@ -209,6 +210,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds: 64
+--- !u!114 &-4867001957853514057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725020993628857119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d132bc30d95a4da82c1e042e92c0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &725020994607688290
 GameObject:
   m_ObjectHideFlags: 0

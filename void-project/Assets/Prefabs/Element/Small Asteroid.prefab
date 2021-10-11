@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5752044008791553891}
   - component: {fileID: 433929032970686322}
   - component: {fileID: -1225831458093945409}
+  - component: {fileID: -1843015625655780501}
   m_Layer: 0
   m_Name: Small Asteroid
   m_TagString: DAMAGING
@@ -186,3 +187,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds: 64
+--- !u!114 &-1843015625655780501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752044008791553895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d132bc30d95a4da82c1e042e92c0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
