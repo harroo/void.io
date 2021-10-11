@@ -477,16 +477,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27529150e0528bec48dd75d54077f3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max: 12
+  max: 24
   shipInfos:
   - infoName: lvl1
     hp: 4
     forwardForce: 2
     turnForce: 0.002
     reloadSpeed: 1
-    bulletForceAdd: 0
     effectID: 2
     bulletDamage: 2
+    bulletForceAdd: 0
     set:
       idle: 0
       forward: 1
