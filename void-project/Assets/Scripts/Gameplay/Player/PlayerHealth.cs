@@ -45,6 +45,8 @@ public class PlayerHealth : MonoBehaviour {
         instance.health = Mathf.Clamp(instance.health, 0, instance.maxHealth);
 
         instance.DeathCheck();
+
+        FindObjectOfType<DamageFlash>().Flash();
     }
 
     public static void Heal (int amount) {
