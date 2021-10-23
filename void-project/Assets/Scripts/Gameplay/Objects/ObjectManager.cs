@@ -66,6 +66,11 @@ public class ObjectManager : MonoBehaviour {
         objs.Add(obj);
     }
 
+    public void CacheLocalObject (Object obj) {
+
+        objs.Add(obj);
+    }
+
     public void CreateObject (int objID, int type, byte[] buf) {
 
         Object obj = Instantiate(GetPrefab(type), Vector3.zero, Quaternion.identity).GetComponent<Object>();

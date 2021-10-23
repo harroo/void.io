@@ -9,6 +9,13 @@ public class LocalPlayerObject : Object {
 
     public SpriteRenderer spriteRenderer;
 
+    public override string Type => "PLAYER_SHIP";
+
+    public override void Asign () {
+
+        ObjectManager.instance.CacheLocalObject(this);
+    }
+
     public override byte[] GetData () {
 
         byte[] nameBuf = System.Text.Encoding.ASCII.GetBytes(GlobalValues.GetUsername());
