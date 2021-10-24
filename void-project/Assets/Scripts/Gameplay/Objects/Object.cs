@@ -92,13 +92,16 @@ public class Object : MonoBehaviour {
 
     private void OnDestroy () {
 
+        Expel();
+
         if (GlobalValues.Hosting) Despawn();
     }
 
-    public virtual void Spawn () {}
-    public virtual void Asign () {}
-    public virtual void Tick () {}
-    public virtual void Despawn () {}
+    public virtual void Spawn () {} //called on start, if host, or forced
+    public virtual void Asign () {} //called on start, NO MATTER WHAT
+    public virtual void Tick () {} //called on update, if host or forced
+    public virtual void Expel () {} //called on destroy, NO MATTER WHAT
+    public virtual void Despawn () {} //called on destroy, if host
 
     private bool killFlag = false;
     public void DeleteThisObject () {

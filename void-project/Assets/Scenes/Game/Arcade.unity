@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 992487719}
   - component: {fileID: 992487718}
   - component: {fileID: 992487720}
+  - component: {fileID: 992487721}
   m_Layer: 0
   m_Name: Environment Populator
   m_TagString: Untagged
@@ -365,6 +366,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max: 256
+--- !u!114 &992487721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992487717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3352c134e4ac2a8a9b112a33a2ab42d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countMax: 5
+  countMin: 2
 --- !u!1 &1094393208
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +510,11 @@ MonoBehaviour:
 --- !u!1 &1199498457 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1885798124655536885, guid: 1bbacbc0789b0d450a53ed235ff3fe53, type: 3}
+  m_PrefabInstance: {fileID: 1885798125781519916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1355265037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1355265037, guid: 1bbacbc0789b0d450a53ed235ff3fe53, type: 3}
   m_PrefabInstance: {fileID: 1885798125781519916}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1391688053 stripped
@@ -1016,6 +1036,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4271739866889294179, guid: fab3c80518d1f1a9f9bc0afd9b672d35, type: 3}
+      propertyPath: overlay
+      value: 
+      objectReference: {fileID: 1355265037}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fab3c80518d1f1a9f9bc0afd9b672d35, type: 3}
 --- !u!1001 &1885798125781519916

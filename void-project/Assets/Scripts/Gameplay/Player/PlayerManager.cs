@@ -20,3 +20,8 @@ public class PlayerManager : MonoBehaviour {
         return playerObject.GetComponent<Object>().GetData();
     }
 }
+
+public static class PlayerRef {
+
+    public static Transform transform => PlayerManager.instance.playerObject.transform;
+}

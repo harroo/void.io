@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 1131079704966852276}
   - component: {fileID: 1131079704966852279}
   - component: {fileID: 1131079704966852278}
+  - component: {fileID: 4271739866889294179}
   m_Layer: 0
   m_Name: Local Player
   m_TagString: Untagged
@@ -313,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeOverlay: {fileID: 0}
+  pointsReminder: {fileID: 0}
 --- !u!114 &1131079704966852279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,3 +342,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   healthBar: {fileID: 0}
+--- !u!114 &4271739866889294179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131079704966852283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80034f7dad4dc5881aa5a1e0693ce544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overlay: {fileID: 0}
+  stations: []
