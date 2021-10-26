@@ -35,6 +35,8 @@ public class ShipdocksSlot : MonoBehaviour {
         PlayerStats.instance.__bulletDamage = option.bulletDamage;
         PlayerStats.instance.__reloadUpgrades = option.reloadUpgrades;
 
+        TcpStream.Send_ColliderUpdate(GlobalValues.LocalPlayerID, option.colliderId);
+
         ShipdocksMenu.Recalc();
     }
 }

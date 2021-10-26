@@ -534,11 +534,26 @@ MonoBehaviour:
     turnForce: 0.2
     brakePower: 3
     defaultDrag: 1.2
-    defaultAngluarDrag: 4
+    defaultAngluarDrag: 5
     regenSpeed: 1
     playerHealth: 3
     bulletDamage: 1
     reloadUpgrades: 1
+    colliderId: 2
+  - name: Tank
+    icon: {fileID: 21300000, guid: ed7db10404052ce499f88c5f2c302513, type: 3}
+    parentId: 1
+    id: 3
+    forwardForce: 1
+    turnForce: 0.1
+    brakePower: 3
+    defaultDrag: 1
+    defaultAngluarDrag: 4
+    regenSpeed: 1
+    playerHealth: 6
+    bulletDamage: 1
+    reloadUpgrades: 1
+    colliderId: 3
 --- !u!1 &1907508296
 GameObject:
   m_ObjectHideFlags: 0

@@ -51,9 +51,11 @@ public class BotShip : Object {
         bulletDamage = BitConverter.ToUInt16(buf, 40);
         bulletForceAdd = BitConverter.ToUInt16(buf, 42);
         bulletID = BitConverter.ToUInt16(buf, 44);
+
+        colliderId = BitConverter.ToUInt16(buf, 46);
     }
 
-    private int nameIndexCache;
+    private int nameIndexCache, colliderId;
     private float reloadSpeed; private int bulletDamage, bulletForceAdd, bulletID;
 
     public BotShipAnimationController animator;
@@ -64,6 +66,7 @@ public class BotShip : Object {
     public override void Asign () {
 
         usernameDisplay.text = BotShipSender.names[nameIndexCache];
+        GetComponent<ColliderCalculator>().Render(colliderId);
     }
 
     public override void Spawn () {

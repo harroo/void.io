@@ -133,6 +133,19 @@ public class TcpLayer : UnityEngine.MonoBehaviour {
                 if (recvID == GlobalValues.LocalPlayerID) PlayerXPManager.AddXP(amount);
 
             break; }
+
+            case TcpMids.UpdateCollider: {
+
+                int objectID = BitConverter.ToInt32(packet, 1);
+
+                int colliderID = BitConverter.ToInt32(packet, 5);
+
+                if (objectID != GlobalValues.LocalPlayerID)
+                    ObjectManager.instance.ById(objectID).GetComponent<ColliderCalculator>().Render(colliderID);
+                else
+                    PlayerRef.player.GetComponent<ColliderCalculator>().Render(colliderID);
+
+            break; }
         }
     }
 }
@@ -148,6 +161,7 @@ public static class TcpMids { //tcp message ids
     public const byte KeepAlive = 6;
     public const byte CreateEffectObject = 7;
     public const byte AwardXP = 8;
+    public const byte UpdateCollider = 9;
 }
 
 public static class TcpStream {
@@ -236,6 +250,16 @@ public static class TcpStream {
         packetBuf[0] = TcpMids.AwardXP;
         Buffer.BlockCopy(BitConverter.GetBytes(recvID), 0, packetBuf, 1, 4);
         Buffer.BlockCopy(BitConverter.GetBytes(amount), 0, packetBuf, 5, 4);
+
+        TcpCore.sendQueue.Add(packetBuf);
+    }
+
+    public static void Send_ColliderUpdate (int objectID, int colliderID) {
+
+        byte[] packetBuf = new byte[9];
+        packetBuf[0] = TcpMids.UpdateCollider;
+        Buffer.BlockCopy(BitConverter.GetBytes(objectID), 0, packetBuf, 1, 4);
+        Buffer.BlockCopy(BitConverter.GetBytes(colliderID), 0, packetBuf, 5, 4);
 
         TcpCore.sendQueue.Add(packetBuf);
     }

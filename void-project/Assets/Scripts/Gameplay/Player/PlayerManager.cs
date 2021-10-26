@@ -24,4 +24,5 @@ public class PlayerManager : MonoBehaviour {
 public static class PlayerRef {
 
     public static Transform transform => PlayerManager.instance.playerObject.transform;
+    public static GameObject player => PlayerManager.instance.playerObject;
 }

@@ -15,10 +15,10 @@ public class ShipdocksMenu : MonoBehaviour {
 
                 case 1: {
 
-                    if (PlayerStats.playerLevel >= 3)
+                    if (PlayerStats.playerLevel >= 10)
                         ShowAvailable();
                     else
-                        ShowRequired(3);
+                        ShowRequired(10);
 
                 break; }
             }
@@ -88,6 +88,8 @@ public class ShipdocksMenu : MonoBehaviour {
         PlayerStats.instance.__playerHealth = 4;
         PlayerStats.instance.__bulletDamage = 1;
         PlayerStats.instance.__reloadUpgrades = 1.0f;
+
+        TcpStream.Send_ColliderUpdate(GlobalValues.LocalPlayerID, 1);
     }
 }
 
@@ -111,4 +113,7 @@ public class UpgradeOption {
     public float regenSpeed = 1.0f;
     public int playerHealth = 4, bulletDamage = 1;
     public float reloadUpgrades = 1.0f;
+
+    [Space()]
+    public int colliderId = 1;
 }

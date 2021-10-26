@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2566305444222176088}
   - component: {fileID: 4108754583508181630}
   - component: {fileID: 1364844381}
+  - component: {fileID: 1474804660}
   m_Layer: 0
   m_Name: Rendering Assets Object
   m_TagString: Untagged
@@ -152,3 +153,34 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 117896face28573fc9d6272438a3f93e, type: 3}
   - {fileID: 21300000, guid: ee87d2005e8f01f56946bde8cec1a849, type: 3}
   - {fileID: 21300000, guid: b9ceb0fff44f4072dabdea27824c706b, type: 3}
+--- !u!114 &1474804660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566305444222176091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612f5247fcbf18752a8f8d266e341baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infos:
+  - name: default
+    id: 1
+    isCircle: 1
+    radius: 0.08
+    sizeX: 0
+    sizeY: 0
+  - name: jet
+    id: 2
+    isCircle: 1
+    radius: 0.09
+    sizeX: 0
+    sizeY: 0
+  - name: tank
+    id: 3
+    isCircle: 1
+    radius: 0.09
+    sizeX: 0
+    sizeY: 0
