@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour {
         ResetHealth();
     }
 
-    private void ResetHealth () {
+    public void ResetHealth () {
 
         healthBar.maxValue = maxHealth;
         health = maxHealth;
