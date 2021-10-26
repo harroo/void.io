@@ -90,6 +90,8 @@ public class ShipdocksMenu : MonoBehaviour {
         PlayerStats.instance.__reloadUpgrades = 1.0f;
 
         TcpStream.Send_ColliderUpdate(GlobalValues.LocalPlayerID, 1);
+
+        PlayerHealth.instance.ResetHealth();
     }
 }
 

@@ -38,5 +38,7 @@ public class ShipdocksSlot : MonoBehaviour {
         TcpStream.Send_ColliderUpdate(GlobalValues.LocalPlayerID, option.colliderId);
 
         ShipdocksMenu.Recalc();
+
+        PlayerHealth.instance.ResetHealth();
     }
 }
