@@ -267,13 +267,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketUpgrades: 0
+  __forwardForce: 2
+  __turnForce: 0.02
   brakeUpgrades: 0
+  __brakePower: 2
   dragUpgrades: 0
+  __defaultDrag: 1
+  __defaultAngluarDrag: 2
   regenUpgrades: 0
+  __regenSpeed: 1
   healthUpgrades: 0
+  __playerHealth: 4
   bulletDamageUpgrades: 0
+  __bulletDamage: 1
   bulletForceUpgrades: 0
   reloadUpgrades: 0
+  __reloadUpgrades: 1
 --- !u!114 &603623286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,6 +511,7 @@ MonoBehaviour:
     effectID: 2
     bulletDamage: 2
     bulletForceAdd: 0
+    bulletID: 1
     set:
       idle: 0
       forward: 1

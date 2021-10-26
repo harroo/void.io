@@ -7,11 +7,17 @@ public class PlayerAnimationController : MonoBehaviour {
 
     public PlayerAnimationSet s1_set;
 
+    public PlayerAnimationSet s2_jet_set;
+    public PlayerAnimationSet s2_tank_set;
+
     private PlayerAnimationSet currentSet () {
 
         switch (PlayerStats.shipID) {
 
             case 1: default: return s1_set;
+            
+            case 2: return s2_jet_set;
+            case 3: return s2_tank_set;
         }
     }
 

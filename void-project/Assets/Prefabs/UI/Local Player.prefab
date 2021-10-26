@@ -110,7 +110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1131079704966852285
 Transform:
   m_ObjectHideFlags: 0
@@ -264,6 +264,16 @@ MonoBehaviour:
     forward: {fileID: 21300000, guid: d4e7ab276cff5e0da8177bc6fd9270fb, type: 3}
     left: {fileID: 21300000, guid: 4606eee10b7ba01eab7b0e638292f20b, type: 3}
     right: {fileID: 21300000, guid: 9029faddb390ca9639c30ca5a883f639, type: 3}
+  s2_jet_set:
+    idle: {fileID: 21300000, guid: 43fc1f2308dfd1b349a72606a35b32a8, type: 3}
+    forward: {fileID: 21300000, guid: 52347163a994232e29b35f193b6c8e60, type: 3}
+    left: {fileID: 21300000, guid: 023aa6a8e65546afb9ac772c8f15ae28, type: 3}
+    right: {fileID: 21300000, guid: 621964d55c0715586a75809fe6cbdb92, type: 3}
+  s2_tank_set:
+    idle: {fileID: 21300000, guid: ed7db10404052ce499f88c5f2c302513, type: 3}
+    forward: {fileID: 21300000, guid: 117896face28573fc9d6272438a3f93e, type: 3}
+    left: {fileID: 21300000, guid: ee87d2005e8f01f56946bde8cec1a849, type: 3}
+    right: {fileID: 21300000, guid: b9ceb0fff44f4072dabdea27824c706b, type: 3}
 --- !u!114 &1131079704966852275
 MonoBehaviour:
   m_ObjectHideFlags: 0

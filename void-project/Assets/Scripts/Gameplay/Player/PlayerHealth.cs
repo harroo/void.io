@@ -77,5 +77,7 @@ public class PlayerHealth : MonoBehaviour {
         int xpCache = PlayerXPManager.instance.xp / 3;
         PlayerXPManager.Reset();
         PlayerXPManager.AddXP(xpCache);
+
+        ShipdocksMenu.SetDefault();
     }
 }

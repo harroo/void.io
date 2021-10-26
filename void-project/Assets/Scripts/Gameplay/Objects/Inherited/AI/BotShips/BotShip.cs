@@ -50,10 +50,11 @@ public class BotShip : Object {
         reloadSpeed = BitConverter.ToSingle(buf, 36);
         bulletDamage = BitConverter.ToUInt16(buf, 40);
         bulletForceAdd = BitConverter.ToUInt16(buf, 42);
+        bulletID = BitConverter.ToUInt16(buf, 44);
     }
 
     private int nameIndexCache;
-    private float reloadSpeed; private int bulletDamage, bulletForceAdd;
+    private float reloadSpeed; private int bulletDamage, bulletForceAdd, bulletID;
 
     public BotShipAnimationController animator;
     public TextMeshPro usernameDisplay;
@@ -119,7 +120,7 @@ public class BotShip : Object {
                 );
                 transform.Translate(Vector3.up * 0.15f);
 
-                BulletCreator.CreateBullet_BOT(1, bulletForceAdd, bulletDamage, transform.position, transform.eulerAngles);
+                BulletCreator.CreateBullet_BOT(bulletID, bulletForceAdd, bulletDamage, transform.position, transform.eulerAngles);
 
                 transform.Translate(Vector3.up * -0.15f);
                 transform.up = cache;

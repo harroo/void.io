@@ -26,40 +26,40 @@ public class PlayerStats : MonoBehaviour {
 
     public float rocketUpgrades;
 
-    private float __forwardForce = 2.0f;
+    public float __forwardForce = 2.0f;
     public static float forwardForce => instance.__forwardForce + (instance.dragUpgrades/1.4f) + instance.rocketUpgrades;
 
 
-    private float __turnForce = 0.02f;
+    public float __turnForce = 0.02f;
     public static float turnForce => instance.__turnForce + (instance.dragUpgrades*0.004f) + (instance.rocketUpgrades*0.01f);
 
 
     public float brakeUpgrades;
 
-    private float __brakePower = 2.0f;
+    public float __brakePower = 2.0f;
     public static float brakePower => instance.__brakePower + instance.brakeUpgrades;
 
 
     public float dragUpgrades;
 
-    private float __defaultDrag = 1.0f;
+    public float __defaultDrag = 1.0f;
     public static float defaultDrag => instance.__defaultDrag + instance.dragUpgrades;
 
 
-    private float __defaultAngluarDrag = 2.0f;
+    public float __defaultAngluarDrag = 2.0f;
     public static float defaultAngluarDrag => instance.__defaultAngluarDrag + (instance.dragUpgrades*1.68f);
 
 //HEALTH
 
     public float regenUpgrades;
 
-    private float __regenSpeed = 1.0f;
+    public float __regenSpeed = 1.0f;
     public static float regenSpeed => instance.__regenSpeed + instance.regenUpgrades;
 
 
     public int healthUpgrades;
 
-    private int __playerHealth = 4;
+    public int __playerHealth = 4;
     public static int playerHealth => instance.__playerHealth + instance.healthUpgrades;
     public static void SetPlayerHealth (int level) { instance.__playerHealth = level; }
 
@@ -67,7 +67,7 @@ public class PlayerStats : MonoBehaviour {
 
     public int bulletDamageUpgrades;
 
-    private int __bulletDamage = 1;
+    public int __bulletDamage = 1;
     public static int bulletDamage => instance.__bulletDamage + instance.bulletDamageUpgrades;
     public static void SetBulletDamage (int level) { instance.__bulletDamage = level; }
 
@@ -79,6 +79,6 @@ public class PlayerStats : MonoBehaviour {
 
     public float reloadUpgrades;
 
-    private float __reloadUpgrades = 1.0f;
+    public float __reloadUpgrades = 1.0f;
     public static float reloadSpeed => instance.__reloadUpgrades + instance.reloadUpgrades;
 }
