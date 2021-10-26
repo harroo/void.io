@@ -534,7 +534,7 @@ MonoBehaviour:
     turnForce: 0.2
     brakePower: 3
     defaultDrag: 1.2
-    defaultAngluarDrag: 5
+    defaultAngluarDrag: 14
     regenSpeed: 1
     playerHealth: 3
     bulletDamage: 1
@@ -548,7 +548,7 @@ MonoBehaviour:
     turnForce: 0.1
     brakePower: 3
     defaultDrag: 1
-    defaultAngluarDrag: 4
+    defaultAngluarDrag: 12
     regenSpeed: 1
     playerHealth: 6
     bulletDamage: 1
