@@ -74,7 +74,7 @@ public class PlayerStats : MonoBehaviour {
 
     public int bulletForceUpgrades;
 
-    public static int bulletForce => instance.bulletDamageUpgrades;
+    public static int bulletForce => instance.bulletForceUpgrades;
 
 
     public float reloadUpgrades;
