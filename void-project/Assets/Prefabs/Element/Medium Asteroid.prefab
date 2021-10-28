@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 658e2cf95b0bc933488cab8d7a497be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 2
+  healthPoints: 3
   awardAmountMin: 40
   awardAmountMax: 80
   deathEffectID: 9
