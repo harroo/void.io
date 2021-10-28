@@ -74,10 +74,10 @@ public class PlayerHealth : MonoBehaviour {
             GlobalValues.LatestAttackingID = 0;
         }
 
+        ShipdocksMenu.SetDefault();
+
         int xpCache = PlayerXPManager.instance.xp / 3;
         PlayerXPManager.Reset();
         PlayerXPManager.AddXP(xpCache);
-
-        ShipdocksMenu.SetDefault();
     }
 }

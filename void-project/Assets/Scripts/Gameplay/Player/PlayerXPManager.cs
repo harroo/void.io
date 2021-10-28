@@ -47,5 +47,6 @@ public class PlayerXPManager : MonoBehaviour {
         PlayerStats.SetPlayerLevel(1);
         PlayerStats.SetShipID(1);
         UpgradeMenu.instance.points = 0;
+        UpgradeMenu.instance.spentPoints = 0;
     }
 }

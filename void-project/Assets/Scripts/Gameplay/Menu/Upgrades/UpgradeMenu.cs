@@ -9,7 +9,7 @@ public class UpgradeMenu : MonoBehaviour {
     public static UpgradeMenu instance;
     private void Awake () { instance = this; }
 
-    public int points;
+    public int points, spentPoints;
 
     private List<Slider> sliderCache = new List<Slider>();
 
@@ -31,6 +31,7 @@ public class UpgradeMenu : MonoBehaviour {
         if (points <= 0) return;
 
         points--;
+        spentPoints++;
         slider.value++;
 
         switch (upgradeName) {
