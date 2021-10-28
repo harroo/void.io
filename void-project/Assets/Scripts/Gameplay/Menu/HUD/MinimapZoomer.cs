@@ -18,5 +18,18 @@ public class MinimapZoomer : MonoBehaviour {
             bigmap.SetActive(false);
             littlemap.SetActive(true);
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Tab)) {
+
+            bigmap.SetActive(true);
+            littlemap.SetActive(false);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab)) {
+
+            bigmap.SetActive(false);
+            littlemap.SetActive(true);
+        }
     }
 }
