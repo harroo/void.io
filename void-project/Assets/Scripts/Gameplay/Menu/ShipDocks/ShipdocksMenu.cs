@@ -78,7 +78,7 @@ public class ShipdocksMenu : MonoBehaviour {
 
         UpgradeMenu.instance.Reset();
 
-        UpgradeMenu.instance.points = Mathf.RoundToInt(spoints / 1.25f);
+        UpgradeMenu.instance.points += Mathf.RoundToInt(spoints / 1.25f);
     }
 
     public static void SetDefault () {
