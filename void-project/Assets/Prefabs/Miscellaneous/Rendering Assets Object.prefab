@@ -166,19 +166,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infos:
-  - name: default
+  - name: hm-default
     id: 1
     isCircle: 1
     radius: 0.08
     sizeX: 0
     sizeY: 0
-  - name: jet
+  - name: hm-jet
     id: 2
     isCircle: 1
     radius: 0.09
     sizeX: 0
     sizeY: 0
-  - name: tank
+  - name: hm-tank
     id: 3
     isCircle: 1
     radius: 0.09
