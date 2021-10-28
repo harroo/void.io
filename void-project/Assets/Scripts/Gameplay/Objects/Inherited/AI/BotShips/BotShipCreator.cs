@@ -96,6 +96,7 @@ public static class BotShipSender {
         "Shrek", "Srek", "Serms", "Serm", "DT", "dtfm8", "m9", "<3", "UwU", "owo", "Ulrich", "Ulrich",
         "$#%^&(#)!", "Bork", "steve", "missel", "Wayne Kerr", "ninja", "tojimo", "sexpert", "Sex Kid",
         "Batman", "Superman", "Wonderwoman", "Wonder Woman", "Dude", "Duder", "Jimbob", "Jaybob", ":)",
-        "Adam", "Jean", "Ola", "Minch", "Munich", "Anja", "Curvey", "Carly", "Shredder", "Schreidier"
+        "Adam", "Jean", "Ola", "Minch", "Munich", "Anja", "Curvey", "Carly", "Shredder", "Schreidier",
+        "Chriss Pratt", "Robbin", "Catwoman", "Brad Bitt", "Tom", "Bayley", "Jade", "Cody", "Dale",
     };
 }
