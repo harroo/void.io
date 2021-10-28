@@ -45,7 +45,7 @@ public class BotShipInfo {
     public int hp;
     public float forwardForce, turnForce, reloadSpeed;
 
-    public int effectID, bulletDamage, bulletForceAdd, bulletID, colliderId;
+    public int effectID, bulletDamage, bulletForceAdd, bulletID, colliderId, xpReward;
 
     public BotShipAnimationSet set;
 }
@@ -54,12 +54,12 @@ public static class BotShipSender {
 
     public static void CreateBotShip (float x, float y, BotShipInfo info) {
 
-        CreateBotShip(x, y, info.forwardForce, info.turnForce, info.set, info.hp, info.effectID, info.reloadSpeed, info.bulletForceAdd, info.bulletDamage, info.bulletID, info.colliderId);
+        CreateBotShip(x, y, info.forwardForce, info.turnForce, info.set, info.hp, info.effectID, info.reloadSpeed, info.bulletForceAdd, info.bulletDamage, info.bulletID, info.colliderId, info.xpReward);
     }
 
-    public static void CreateBotShip (float x, float y, float forwardForce, float turnForce, BotShipAnimationSet set, int hp, int effectID, float reloadSpeed, float bulletForceAdd, int bulletDamage, int bulletID, int colliderId) {
+    public static void CreateBotShip (float x, float y, float forwardForce, float turnForce, BotShipAnimationSet set, int hp, int effectID, float reloadSpeed, float bulletForceAdd, int bulletDamage, int bulletID, int colliderId, int xpReward) {
 
-        byte[] botShipData = new byte[48];
+        byte[] botShipData = new byte[50];
         Buffer.BlockCopy(BitConverter.GetBytes(x), 0, botShipData, 0, 4);
         Buffer.BlockCopy(BitConverter.GetBytes(y), 0, botShipData, 4, 4);
         Buffer.BlockCopy(BitConverter.GetBytes(UnityEngine.Random.Range(0f, 180f)), 0, botShipData, 8, 4);
@@ -79,6 +79,7 @@ public static class BotShipSender {
         Buffer.BlockCopy(BitConverter.GetBytes((ushort)bulletForceAdd), 0, botShipData, 42, 2);
         Buffer.BlockCopy(BitConverter.GetBytes((ushort)bulletID), 0, botShipData, 44, 2);
         Buffer.BlockCopy(BitConverter.GetBytes((ushort)colliderId), 0, botShipData, 46, 2);
+        Buffer.BlockCopy(BitConverter.GetBytes((ushort)xpReward), 0, botShipData, 48, 2);
 
         TcpStream.Send_CreateObject(UnityEngine.Random.Range(-999999999, 999999999), 11, botShipData);
     }

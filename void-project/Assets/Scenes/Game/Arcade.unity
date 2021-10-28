@@ -513,6 +513,7 @@ MonoBehaviour:
     bulletForceAdd: 0
     bulletID: 1
     colliderId: 1
+    xpReward: 420
     set:
       idle: 0
       forward: 1
@@ -528,6 +529,7 @@ MonoBehaviour:
     bulletForceAdd: 1
     bulletID: 1
     colliderId: 2
+    xpReward: 690
     set:
       idle: 4
       forward: 5
@@ -543,6 +545,7 @@ MonoBehaviour:
     bulletForceAdd: 0
     bulletID: 1
     colliderId: 3
+    xpReward: 690
     set:
       idle: 8
       forward: 9
