@@ -72,6 +72,14 @@ public class ShipdocksMenu : MonoBehaviour {
 
         FindObjectOfType<ShipdocksMenu>().Clear();
     }
+    public static void ResetUpgrades () {
+
+        int points = UpgradeMenu.instance.points;
+
+        UpgradeMenu.instance.Reset();
+
+        UpgradeMenu.instance.points = Mathf.RoundToInt(points / 1.25f);
+    }
 
     public static void SetDefault () {
 
@@ -92,6 +100,8 @@ public class ShipdocksMenu : MonoBehaviour {
         TcpStream.Send_ColliderUpdate(GlobalValues.LocalPlayerID, 1);
 
         PlayerHealth.instance.ResetHealth();
+
+        ResetUpgrades();
     }
 }
 
