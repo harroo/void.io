@@ -48,6 +48,8 @@ public class BotShipInfo {
     public int effectID, bulletDamage, bulletForceAdd, bulletID, colliderId, xpReward;
 
     public BotShipAnimationSet set;
+
+    // public
 }
 
 public static class BotShipSender {
@@ -99,5 +101,6 @@ public static class BotShipSender {
         "Batman", "Superman", "Wonderwoman", "Wonder Woman", "Dude", "Duder", "Jimbob", "Jaybob", ":)",
         "Adam", "Jean", "Ola", "Minch", "Munich", "Anja", "Curvey", "Carly", "Shredder", "Schreidier",
         "Chriss Pratt", "Robbin", "Catwoman", "Brad Bitt", "Tom", "Bayley", "Jade", "Cody", "Dale",
+        "Tyrone", "6Tyrone9"
     };
 }

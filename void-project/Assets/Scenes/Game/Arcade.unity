@@ -385,7 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   max: 24
   shipInfos:
-  - infoName: lvl1
+  - infoName: hm lvl1
     hp: 4
     forwardForce: 2
     turnForce: 0.002
@@ -401,7 +401,7 @@ MonoBehaviour:
       forward: 1
       left: 2
       right: 3
-  - infoName: lvl2 jet
+  - infoName: hm lvl2 jet
     hp: 3
     forwardForce: 4
     turnForce: 0.002
@@ -417,7 +417,7 @@ MonoBehaviour:
       forward: 5
       left: 6
       right: 7
-  - infoName: lvl2 tank
+  - infoName: hm lvl2 tank
     hp: 6
     forwardForce: 1
     turnForce: 0.0015
@@ -433,6 +433,38 @@ MonoBehaviour:
       forward: 9
       left: 10
       right: 11
+  - infoName: rb lvl1
+    hp: 2
+    forwardForce: 1
+    turnForce: 0.0015
+    reloadSpeed: 1.2
+    effectID: 2
+    bulletDamage: 4
+    bulletForceAdd: 0
+    bulletID: 13
+    colliderId: 4
+    xpReward: 420
+    set:
+      idle: 16
+      forward: 17
+      left: 18
+      right: 19
+  - infoName: pr lvl1
+    hp: 5
+    forwardForce: 0.5
+    turnForce: 0.0015
+    reloadSpeed: 0.6
+    effectID: 2
+    bulletDamage: 1
+    bulletForceAdd: 0
+    bulletID: 14
+    colliderId: 5
+    xpReward: 420
+    set:
+      idle: 12
+      forward: 13
+      left: 14
+      right: 15
 --- !u!114 &1391688053 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1885798125017069401, guid: 1bbacbc0789b0d450a53ed235ff3fe53, type: 3}
