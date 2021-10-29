@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class PlayerGunController : MonoBehaviour {
 
+    public static PlayerGunController instance;
+    private void Awake () { instance = this; }
+
     private void Update () {
 
         switch (PlayerStats.shipID) {
@@ -15,7 +18,13 @@ public class PlayerGunController : MonoBehaviour {
         }
     }
 
-    private float reloadTimer;
+    public float reloadTimer = 0.0f;
+
+    private void StartReload (float val) {
+
+        reloadTimer = val;
+        ReloadBar.total = val;
+    }
 
     private void hm_bs_Tick () {
 
@@ -23,7 +32,7 @@ public class PlayerGunController : MonoBehaviour {
 
         if (Input.GetMouseButton(0)) {
 
-            reloadTimer = 1.5f;
+            StartReload(1.5f);
 
             var cache = transform.up;
             transform.up = getFaceMouseRotation();
@@ -42,7 +51,7 @@ public class PlayerGunController : MonoBehaviour {
 
         if (Input.GetMouseButton(0)) {
 
-            reloadTimer = 1.5f;
+            StartReload(1.5f);
 
             var cache = transform.up;
             transform.up = getFaceMouseRotation();
@@ -61,7 +70,7 @@ public class PlayerGunController : MonoBehaviour {
 
         if (Input.GetMouseButton(0)) {
 
-            reloadTimer = 1.5f;
+            StartReload(1.5f);
 
             var cache = transform.up;
             transform.up = getFaceMouseRotation();
