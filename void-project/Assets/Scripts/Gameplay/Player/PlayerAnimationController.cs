@@ -5,20 +5,18 @@ public class PlayerAnimationController : MonoBehaviour {
 
     public SpriteRenderer sRenderer;
 
-    public PlayerAnimationSet s1_set;
+    public AnimationSetInfo[] sets;
 
-    public PlayerAnimationSet s2_jet_set;
-    public PlayerAnimationSet s2_tank_set;
+    private AnimationSetInfo setCache;
+
+    private void Start () { setCache = sets[0]; }
 
     private PlayerAnimationSet currentSet () {
 
-        switch (PlayerStats.shipID) {
+        if (setCache.id != PlayerStats.shipID)
+            setCache = System.Array.Find(sets, s => s.id == PlayerStats.shipID);
 
-            case 1: default: return s1_set;
-            
-            case 2: return s2_jet_set;
-            case 3: return s2_tank_set;
-        }
+        return setCache.set;
     }
 
     private bool W, A, D;
@@ -42,6 +40,16 @@ public class PlayerAnimationController : MonoBehaviour {
 
         PlayerStats.SetTextureIndex(PlayerRenderingAssets.Index(sprite));
     }
+}
+
+[System.Serializable]
+public class AnimationSetInfo {
+
+    public string name;
+
+    public int id;
+
+    public PlayerAnimationSet set;
 }
 
 [System.Serializable]

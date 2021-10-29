@@ -7,13 +7,17 @@ public class PlayerGunController : MonoBehaviour {
 
         switch (PlayerStats.shipID) {
 
-            case 1: default: s1_Tick(); break;
+            case 1: default: hm_bs_Tick(); break;
+
+            case 4: rb_bs_Tick(); break;
+
+            case 5: pr_bs_Tick(); break;
         }
     }
 
     private float reloadTimer;
 
-    private void s1_Tick () {
+    private void hm_bs_Tick () {
 
         if (reloadTimer > 0) { reloadTimer -= Time.deltaTime * PlayerStats.reloadSpeed; return; }
 
@@ -28,6 +32,44 @@ public class PlayerGunController : MonoBehaviour {
             BulletCreator.CreateBullet(1, PlayerStats.bulletForce, PlayerStats.bulletDamage, transform.position, transform.eulerAngles);
 
             transform.Translate(Vector3.up * -0.15f);
+            transform.up = cache;
+        }
+    }
+
+    private void rb_bs_Tick () {
+
+        if (reloadTimer > 0) { reloadTimer -= Time.deltaTime * PlayerStats.reloadSpeed; return; }
+
+        if (Input.GetMouseButton(0)) {
+
+            reloadTimer = 1.5f;
+
+            var cache = transform.up;
+            transform.up = getFaceMouseRotation();
+            transform.Translate(Vector3.up * 0.15f);
+
+            BulletCreator.CreateBullet(13, PlayerStats.bulletForce, PlayerStats.bulletDamage, transform.position, transform.eulerAngles);
+
+            transform.Translate(Vector3.up * -0.15f);
+            transform.up = cache;
+        }
+    }
+
+    private void pr_bs_Tick () {
+
+        if (reloadTimer > 0) { reloadTimer -= Time.deltaTime * PlayerStats.reloadSpeed; return; }
+
+        if (Input.GetMouseButton(0)) {
+
+            reloadTimer = 1.5f;
+
+            var cache = transform.up;
+            transform.up = getFaceMouseRotation();
+            transform.Translate(Vector3.up * 0.17f);
+
+            BulletCreator.CreateBullet(14, PlayerStats.bulletForce, PlayerStats.bulletDamage, transform.position, transform.eulerAngles);
+
+            transform.Translate(Vector3.up * -0.17f);
             transform.up = cache;
         }
     }

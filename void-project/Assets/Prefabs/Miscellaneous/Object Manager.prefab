@@ -70,3 +70,7 @@ MonoBehaviour:
     prefab: {fileID: 725020993628857119, guid: 19e37232c17e2d6cbb78d1882e769a23, type: 3}
   - type: 12
     prefab: {fileID: 6920898587518164481, guid: 4f925544542945642b414e739e284f56, type: 3}
+  - type: 13
+    prefab: {fileID: 1771289204904250195, guid: 3fd482d15711258ada294ce1e1e517a7, type: 3}
+  - type: 14
+    prefab: {fileID: 1771289204904250195, guid: e04cb5e74ab9abb2198037399d21cae3, type: 3}

@@ -79,5 +79,7 @@ public class PlayerHealth : MonoBehaviour {
         int xpCache = PlayerXPManager.instance.xp / 3;
         PlayerXPManager.Reset();
         PlayerXPManager.AddXP(xpCache);
+
+        RespawnMenu.instance.Activate();
     }
 }

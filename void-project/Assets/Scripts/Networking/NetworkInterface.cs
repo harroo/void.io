@@ -23,8 +23,7 @@ public class NetworkInterface : MonoBehaviour {
         PlayerManager.instance.SetPlayerStart(GlobalValues.LocalPlayerID);
         TcpStream.Send_CreateObject(GlobalValues.LocalPlayerID, 0, PlayerManager.instance.GetPlayerData());
 
-        //might be removed and used just as the default thing when we have multiple tech trees
-        TcpStream.Send_ColliderUpdate(GlobalValues.LocalPlayerID, 1);
+        RespawnMenu.instance.Activate();
     }
 
     public void Update () {

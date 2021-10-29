@@ -287,21 +287,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sRenderer: {fileID: 1131079704966852282}
-  s1_set:
-    idle: {fileID: 21300000, guid: f7d06758ea208e2eaaa29b5753e92974, type: 3}
-    forward: {fileID: 21300000, guid: d4e7ab276cff5e0da8177bc6fd9270fb, type: 3}
-    left: {fileID: 21300000, guid: 4606eee10b7ba01eab7b0e638292f20b, type: 3}
-    right: {fileID: 21300000, guid: 9029faddb390ca9639c30ca5a883f639, type: 3}
-  s2_jet_set:
-    idle: {fileID: 21300000, guid: 43fc1f2308dfd1b349a72606a35b32a8, type: 3}
-    forward: {fileID: 21300000, guid: 52347163a994232e29b35f193b6c8e60, type: 3}
-    left: {fileID: 21300000, guid: 023aa6a8e65546afb9ac772c8f15ae28, type: 3}
-    right: {fileID: 21300000, guid: 621964d55c0715586a75809fe6cbdb92, type: 3}
-  s2_tank_set:
-    idle: {fileID: 21300000, guid: ed7db10404052ce499f88c5f2c302513, type: 3}
-    forward: {fileID: 21300000, guid: 117896face28573fc9d6272438a3f93e, type: 3}
-    left: {fileID: 21300000, guid: ee87d2005e8f01f56946bde8cec1a849, type: 3}
-    right: {fileID: 21300000, guid: b9ceb0fff44f4072dabdea27824c706b, type: 3}
+  sets:
+  - name: hm-default
+    id: 1
+    set:
+      idle: {fileID: 21300000, guid: f7d06758ea208e2eaaa29b5753e92974, type: 3}
+      forward: {fileID: 21300000, guid: d4e7ab276cff5e0da8177bc6fd9270fb, type: 3}
+      left: {fileID: 21300000, guid: 4606eee10b7ba01eab7b0e638292f20b, type: 3}
+      right: {fileID: 21300000, guid: 9029faddb390ca9639c30ca5a883f639, type: 3}
+  - name: hm-jet
+    id: 2
+    set:
+      idle: {fileID: 21300000, guid: 43fc1f2308dfd1b349a72606a35b32a8, type: 3}
+      forward: {fileID: 21300000, guid: 52347163a994232e29b35f193b6c8e60, type: 3}
+      left: {fileID: 21300000, guid: 023aa6a8e65546afb9ac772c8f15ae28, type: 3}
+      right: {fileID: 21300000, guid: 621964d55c0715586a75809fe6cbdb92, type: 3}
+  - name: hm-tank
+    id: 3
+    set:
+      idle: {fileID: 21300000, guid: ed7db10404052ce499f88c5f2c302513, type: 3}
+      forward: {fileID: 21300000, guid: 117896face28573fc9d6272438a3f93e, type: 3}
+      left: {fileID: 21300000, guid: ee87d2005e8f01f56946bde8cec1a849, type: 3}
+      right: {fileID: 21300000, guid: b9ceb0fff44f4072dabdea27824c706b, type: 3}
+  - name: rb-default
+    id: 4
+    set:
+      idle: {fileID: 21300000, guid: abe6d04e2e35aae569181a4d7092d473, type: 3}
+      forward: {fileID: 21300000, guid: ae9eab8bc588384bba004fc63a91fa23, type: 3}
+      left: {fileID: 21300000, guid: 5a3553d5731fc55ffa2456931662d437, type: 3}
+      right: {fileID: 21300000, guid: 6dbf2148a2775d695ad24b58cdd60df9, type: 3}
+  - name: pr-default
+    id: 5
+    set:
+      idle: {fileID: 21300000, guid: 2068a5486836e9dfbab4f83e279ba49e, type: 3}
+      forward: {fileID: 21300000, guid: fc85079b43e9cf7b3bd43be2e70ee829, type: 3}
+      left: {fileID: 21300000, guid: 0c46309aae24d5af784553e4f20cd5ba, type: 3}
+      right: {fileID: 21300000, guid: 0e49ac9112fc09908b335ede3daccf8a, type: 3}
 --- !u!114 &1131079704966852275
 MonoBehaviour:
   m_ObjectHideFlags: 0
