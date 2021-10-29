@@ -452,7 +452,7 @@ MonoBehaviour:
   - infoName: pr lvl1
     hp: 5
     forwardForce: 0.5
-    turnForce: 0.0015
+    turnForce: 0.0032
     reloadSpeed: 0.6
     effectID: 2
     bulletDamage: 1
