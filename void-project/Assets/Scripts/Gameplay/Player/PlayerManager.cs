@@ -24,7 +24,7 @@ public class PlayerManager : MonoBehaviour {
 
     public void HideShip () {
 
-        playerObject.SetActive(false);
+        // playerObject.SetActive(false);
 
         goCache = new GameObject("PLACE HOLDER");
         goCache.transform.position = playerObject.transform.position;
@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour {
 
     public void ShowShip () {
 
-        playerObject.SetActive(true);
+        // playerObject.SetActive(true);
 
         playerObject.transform.position = goCache.transform.position;
         Destroy(goCache);
