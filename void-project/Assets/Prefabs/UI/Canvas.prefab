@@ -1571,7 +1571,7 @@ MonoBehaviour:
     defaultAngluarDrag: 2
     regenSpeed: 1
     playerHealth: 2
-    bulletDamage: 2
+    bulletDamage: 3
     reloadUpgrades: 0.5
     colliderId: 4
   - name: Pirates

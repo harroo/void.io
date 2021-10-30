@@ -153,7 +153,7 @@ MonoBehaviour:
   forceDontSpawn: 0
   forceDoPosSync: 0
   forceDontPosSync: 1
-  startForce: 14
+  startForce: 13
   aliveTime: 8
   creatorID: 0
 --- !u!114 &2052492209135607148
