@@ -5,18 +5,16 @@ public class PlayerAnimationController : MonoBehaviour {
 
     public SpriteRenderer sRenderer;
 
-    public AnimationSetInfo[] sets;
+    private int idCache;
 
-    private AnimationSetInfo setCache;
+    private void Start () { idCache = -1; }
 
-    private void Start () { setCache = sets[0]; }
+    private ShipSpriteSet currentSet () {
 
-    private PlayerAnimationSet currentSet () {
+        if (idCache != PlayerStats.shipID)
+            idCache = PlayerStats.shipID;
 
-        if (setCache.id != PlayerStats.shipID)
-            setCache = System.Array.Find(sets, s => s.id == PlayerStats.shipID);
-
-        return setCache.set;
+        return ShipRenderingAssets.Get(ShipIndex.Get(idCache).setId);
     }
 
     private bool W, A, D;
@@ -38,22 +36,6 @@ public class PlayerAnimationController : MonoBehaviour {
 
         sRenderer.sprite = sprite;
 
-        PlayerStats.SetTextureIndex(PlayerRenderingAssets.Index(sprite));
+        PlayerStats.SetTextureIndex(ShipRenderingAssets.GetIndex(sprite));
     }
-}
-
-[System.Serializable]
-public class AnimationSetInfo {
-
-    public string name;
-
-    public int id;
-
-    public PlayerAnimationSet set;
-}
-
-[System.Serializable]
-public class PlayerAnimationSet {
-
-    public Sprite idle, forward, left, right;
 }

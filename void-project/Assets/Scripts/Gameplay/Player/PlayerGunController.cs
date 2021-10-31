@@ -8,13 +8,13 @@ public class PlayerGunController : MonoBehaviour {
 
     private void Update () {
 
-        switch (PlayerStats.shipID) {
+        switch (ShipIndex.Get(PlayerStats.shipID).weaponType) {
 
-            case 1: default: hm_bs_Tick(); break;
+            case WeaponType.Humon_Standard: default: Humon_Standard(); break;
 
-            case 4: rb_bs_Tick(); break;
+            case WeaponType.Ruzbad_Standard: Ruzbad_Standard(); break;
 
-            case 5: pr_bs_Tick(); break;
+            case WeaponType.Pirate_Standard: Pirate_Standard(); break;
         }
     }
 
@@ -26,7 +26,7 @@ public class PlayerGunController : MonoBehaviour {
         ReloadBar.total = val;
     }
 
-    private void hm_bs_Tick () {
+    private void Humon_Standard () {
 
         if (reloadTimer > 0) { reloadTimer -= Time.deltaTime * PlayerStats.reloadSpeed; return; }
 
@@ -45,7 +45,7 @@ public class PlayerGunController : MonoBehaviour {
         }
     }
 
-    private void rb_bs_Tick () {
+    private void Ruzbad_Standard () {
 
         if (reloadTimer > 0) { reloadTimer -= Time.deltaTime * PlayerStats.reloadSpeed; return; }
 
@@ -64,7 +64,7 @@ public class PlayerGunController : MonoBehaviour {
         }
     }
 
-    private void pr_bs_Tick () {
+    private void Pirate_Standard () {
 
         if (reloadTimer > 0) { reloadTimer -= Time.deltaTime * PlayerStats.reloadSpeed; return; }
 
@@ -94,4 +94,11 @@ public class PlayerGunController : MonoBehaviour {
             mousePosition.y - transform.position.y
         );
     }
+}
+
+public enum WeaponType {
+
+    Humon_Standard,
+    Ruzbad_Standard,
+    Pirate_Standard
 }

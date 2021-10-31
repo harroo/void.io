@@ -24,13 +24,15 @@ public class RespawnMenu : MonoBehaviour {
 
         slotPrefab.SetActive(true);
 
-        foreach (var option in options) {
+        foreach (ShipData shipData in ShipIndex.shipData.Values) {
+
+            if (shipData.parentId != -1) continue;
 
             GameObject slot = Instantiate(slotPrefab, Vector3.zero, Quaternion.identity);
             slot.transform.SetParent(parent);
             slot.transform.localScale = new Vector3(1,1,1);
 
-            slot.GetComponent<RespawnMenuSlot>().SetData(option);
+            slot.GetComponent<RespawnMenuSlot>().SetData(shipData);
         }
 
         slotPrefab.SetActive(false);

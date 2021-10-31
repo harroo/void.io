@@ -11,17 +11,17 @@ public class ShipdocksMenu : MonoBehaviour {
 
         if (timer < 0) { timer = 0.25f;
 
-            switch (PlayerStats.shipID) {
+            // switch (PlayerStats.shipID) {
+            //
+            //     case 1: {
 
-                case 1: {
-
-                    if (PlayerStats.playerLevel >= 10)
+                    if (PlayerStats.playerLevel >= 1)
                         ShowAvailable();
                     else
                         ShowRequired(10);
 
-                break; }
-            }
+            //     break; }
+            // }
 
         } else timer -= Time.deltaTime;
     }
@@ -36,16 +36,15 @@ public class ShipdocksMenu : MonoBehaviour {
 
         slotPrefab.SetActive(true);
 
-        foreach (var option in options) {
+        foreach (ShipData shipData in ShipIndex.shipData.Values) {
 
-            if (option.parentId == PlayerStats.shipID) {
+            if (shipData.parentId != PlayerStats.shipID) continue;
 
-                GameObject slot = Instantiate(slotPrefab, Vector3.zero, Quaternion.identity);
-                slot.transform.SetParent(parent);
-                slot.transform.localScale = new Vector3(1,1,1);
+            GameObject slot = Instantiate(slotPrefab, Vector3.zero, Quaternion.identity);
+            slot.transform.SetParent(parent);
+            slot.transform.localScale = new Vector3(1,1,1);
 
-                slot.GetComponent<ShipdocksSlot>().SetData(option);
-            }
+            slot.GetComponent<ShipdocksSlot>().SetData(shipData);
         }
 
         slotPrefab.SetActive(false);

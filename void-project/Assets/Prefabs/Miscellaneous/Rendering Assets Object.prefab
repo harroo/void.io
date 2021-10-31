@@ -140,27 +140,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed741450539a429bb3796b64a5eadb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textures:
-  - {fileID: 21300000, guid: f7d06758ea208e2eaaa29b5753e92974, type: 3}
-  - {fileID: 21300000, guid: d4e7ab276cff5e0da8177bc6fd9270fb, type: 3}
-  - {fileID: 21300000, guid: 4606eee10b7ba01eab7b0e638292f20b, type: 3}
-  - {fileID: 21300000, guid: 9029faddb390ca9639c30ca5a883f639, type: 3}
-  - {fileID: 21300000, guid: 43fc1f2308dfd1b349a72606a35b32a8, type: 3}
-  - {fileID: 21300000, guid: 52347163a994232e29b35f193b6c8e60, type: 3}
-  - {fileID: 21300000, guid: 023aa6a8e65546afb9ac772c8f15ae28, type: 3}
-  - {fileID: 21300000, guid: 621964d55c0715586a75809fe6cbdb92, type: 3}
-  - {fileID: 21300000, guid: ed7db10404052ce499f88c5f2c302513, type: 3}
-  - {fileID: 21300000, guid: 117896face28573fc9d6272438a3f93e, type: 3}
-  - {fileID: 21300000, guid: ee87d2005e8f01f56946bde8cec1a849, type: 3}
-  - {fileID: 21300000, guid: b9ceb0fff44f4072dabdea27824c706b, type: 3}
-  - {fileID: 21300000, guid: 2068a5486836e9dfbab4f83e279ba49e, type: 3}
-  - {fileID: 21300000, guid: fc85079b43e9cf7b3bd43be2e70ee829, type: 3}
-  - {fileID: 21300000, guid: 0c46309aae24d5af784553e4f20cd5ba, type: 3}
-  - {fileID: 21300000, guid: 0e49ac9112fc09908b335ede3daccf8a, type: 3}
-  - {fileID: 21300000, guid: abe6d04e2e35aae569181a4d7092d473, type: 3}
-  - {fileID: 21300000, guid: ae9eab8bc588384bba004fc63a91fa23, type: 3}
-  - {fileID: 21300000, guid: 5a3553d5731fc55ffa2456931662d437, type: 3}
-  - {fileID: 21300000, guid: 6dbf2148a2775d695ad24b58cdd60df9, type: 3}
+  sets:
+  - idle: {fileID: 21300000, guid: f7d06758ea208e2eaaa29b5753e92974, type: 3}
+    forward: {fileID: 21300000, guid: d4e7ab276cff5e0da8177bc6fd9270fb, type: 3}
+    left: {fileID: 21300000, guid: 4606eee10b7ba01eab7b0e638292f20b, type: 3}
+    right: {fileID: 21300000, guid: 9029faddb390ca9639c30ca5a883f639, type: 3}
+  - idle: {fileID: 21300000, guid: 43fc1f2308dfd1b349a72606a35b32a8, type: 3}
+    forward: {fileID: 21300000, guid: 52347163a994232e29b35f193b6c8e60, type: 3}
+    left: {fileID: 21300000, guid: 023aa6a8e65546afb9ac772c8f15ae28, type: 3}
+    right: {fileID: 21300000, guid: 621964d55c0715586a75809fe6cbdb92, type: 3}
+  - idle: {fileID: 21300000, guid: ed7db10404052ce499f88c5f2c302513, type: 3}
+    forward: {fileID: 21300000, guid: 117896face28573fc9d6272438a3f93e, type: 3}
+    left: {fileID: 21300000, guid: ee87d2005e8f01f56946bde8cec1a849, type: 3}
+    right: {fileID: 21300000, guid: b9ceb0fff44f4072dabdea27824c706b, type: 3}
+  - idle: {fileID: 21300000, guid: abe6d04e2e35aae569181a4d7092d473, type: 3}
+    forward: {fileID: 21300000, guid: ae9eab8bc588384bba004fc63a91fa23, type: 3}
+    left: {fileID: 21300000, guid: 5a3553d5731fc55ffa2456931662d437, type: 3}
+    right: {fileID: 21300000, guid: 6dbf2148a2775d695ad24b58cdd60df9, type: 3}
+  - idle: {fileID: 21300000, guid: 47d4921052fdc8fb0942ce082b80b389, type: 3}
+    forward: {fileID: 21300000, guid: c24b233d89c2e9a0fb543bbe32ebd8ba, type: 3}
+    left: {fileID: 21300000, guid: aace85de577e9561cb0c0b76f061a01a, type: 3}
+    right: {fileID: 21300000, guid: 8338d1b816fb6a259a624f3b674efb24, type: 3}
+  - idle: {fileID: 21300000, guid: a5bacd5273546e24ca4e3305846221de, type: 3}
+    forward: {fileID: 21300000, guid: bc6c45d2ba1fbed5ebe6432969a386ee, type: 3}
+    left: {fileID: 21300000, guid: e0bd1856cb815e760a9c7965ee5f489f, type: 3}
+    right: {fileID: 21300000, guid: b7816b29962d9dddbbedfe53de67a1be, type: 3}
+  - idle: {fileID: 21300000, guid: 2068a5486836e9dfbab4f83e279ba49e, type: 3}
+    forward: {fileID: 21300000, guid: fc85079b43e9cf7b3bd43be2e70ee829, type: 3}
+    left: {fileID: 21300000, guid: 0c46309aae24d5af784553e4f20cd5ba, type: 3}
+    right: {fileID: 21300000, guid: 0e49ac9112fc09908b335ede3daccf8a, type: 3}
+  - idle: {fileID: 21300000, guid: 39d18071b92905a5a973d932c7127091, type: 3}
+    forward: {fileID: 21300000, guid: a4344be4d44cea095a0154a50d6d96a7, type: 3}
+    left: {fileID: 21300000, guid: 4c46b2690e6514075b4a7f20d2d2c163, type: 3}
+    right: {fileID: 21300000, guid: e626cdbf3add05180b11f3e3fd62d99e, type: 3}
+  - idle: {fileID: 21300000, guid: 096ea41ffd080f6f0abb28031f8c9203, type: 3}
+    forward: {fileID: 21300000, guid: 206d1f69b7a4574eea0bd01ce368d1fb, type: 3}
+    left: {fileID: 21300000, guid: 9161447a816bc29e393e8054ab1b7761, type: 3}
+    right: {fileID: 21300000, guid: 3b994019df1641d17bb040f1c439554b, type: 3}
 --- !u!114 &1474804660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +220,27 @@ MonoBehaviour:
     radius: 0
     sizeX: 0.082
     sizeY: 0.16
+  - name: rb-disruptor
+    id: 6
+    isCircle: 1
+    radius: 0.08
+    sizeX: 0
+    sizeY: 0
+  - name: rb-interceptor
+    id: 7
+    isCircle: 1
+    radius: 0.08
+    sizeX: 0
+    sizeY: 0
+  - name: rb-interceptor
+    id: 7
+    isCircle: 1
+    radius: 0.08
+    sizeX: 0
+    sizeY: 0
+  - name: rb-interceptor
+    id: 7
+    isCircle: 1
+    radius: 0.08
+    sizeX: 0
+    sizeY: 0

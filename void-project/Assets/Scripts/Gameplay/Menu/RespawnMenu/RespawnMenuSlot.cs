@@ -7,19 +7,19 @@ public class RespawnMenuSlot : MonoBehaviour {
     public Image image;
     public Text text;
 
-    private StarterOption option;
+    private ShipData option;
 
-    public void SetData (StarterOption option) {
+    public void SetData (ShipData option) {
 
         this.option = option;
 
-        image.sprite = option.icon;
-        text.text = option.name;
+        image.sprite = ShipRenderingAssets.Get(option.setId).idle;
+        text.text = option.shipName;
     }
 
     public void Click () {
 
-        PlayerStats.SetShipID(option.id);
+        PlayerStats.SetShipID(option.shipId);
 
         PlayerStats.instance.__forwardForce = option.forwardForce;
         PlayerStats.instance.__turnForce = option.turnForce;
@@ -29,9 +29,9 @@ public class RespawnMenuSlot : MonoBehaviour {
         PlayerStats.instance.__defaultAngluarDrag = option.defaultAngluarDrag;
 
         PlayerStats.instance.__regenSpeed = option.regenSpeed;
-        PlayerStats.instance.__playerHealth = option.playerHealth;
+        PlayerStats.instance.__playerHealth = option.healthPoints;
         PlayerStats.instance.__bulletDamage = option.bulletDamage;
-        PlayerStats.instance.__reloadUpgrades = option.reloadUpgrades;
+        PlayerStats.instance.__reloadUpgrades = option.reloadSpeed;
 
         TcpStream.Send_ColliderUpdate(GlobalValues.LocalPlayerID, option.colliderId);
 

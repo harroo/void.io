@@ -16,7 +16,7 @@ public class BotShipAnimationController : MonoBehaviour {
 
     private void Set (int index) {
 
-        sRenderer.sprite = PlayerRenderingAssets.Get(index);
+        sRenderer.sprite = ShipRenderingAssets.GetSprite(index);
 
         if (GlobalValues.Hosting)
             UdpStream.Send_ObjectUpdate(ship.ID, System.BitConverter.GetBytes(index));
@@ -24,7 +24,7 @@ public class BotShipAnimationController : MonoBehaviour {
 
     public void UpdateSprite (int index) {
 
-        sRenderer.sprite = PlayerRenderingAssets.Get(index);
+        sRenderer.sprite = ShipRenderingAssets.GetSprite(index);
     }
 }
 

@@ -24,10 +24,22 @@ public class BotShipCreator : MonoBehaviour {
             BotShipSender.CreateBotShip(
                 UnityEngine.Random.Range(-60, 60),
                 UnityEngine.Random.Range(-60, 60),
-                shipInfos[UnityEngine.Random.Range(0, shipInfos.Length)]
+                // shipInfos[UnityEngine.Random.Range(0, shipInfos.Length)]
+                GetRandomShipData()
             );
 
         } else timer -= Time.deltaTime;
+    }
+
+    private ShipData GetRandomShipData () {
+
+        int index = 0, rng = UnityEngine.Random.Range(0, ShipIndex.shipData.Count);
+        foreach (var shipData in ShipIndex.shipData.Values) {
+
+            if (index == rng) return shipData;
+            index++;
+        }
+        return null;
     }
 
     private List<Object> asos = new List<Object>();
@@ -59,7 +71,26 @@ public static class BotShipSender {
         CreateBotShip(x, y, info.forwardForce, info.turnForce, info.set, info.hp, info.effectID, info.reloadSpeed, info.bulletForceAdd, info.bulletDamage, info.bulletID, info.colliderId, info.xpReward);
     }
 
-    public static void CreateBotShip (float x, float y, float forwardForce, float turnForce, BotShipAnimationSet set, int hp, int effectID, float reloadSpeed, float bulletForceAdd, int bulletDamage, int bulletID, int colliderId, int xpReward) {
+    public static void CreateBotShip (float x, float y, ShipData sd) {
+
+        CreateBotShip(
+            x, y, sd.forwardForceBot, sd.turnForceBot,
+            new BotShipAnimationSet{
+                idle=ShipRenderingAssets.GetIndex(ShipRenderingAssets.Get(sd.setId).idle),
+                forward=ShipRenderingAssets.GetIndex(ShipRenderingAssets.Get(sd.setId).forward),
+                left=ShipRenderingAssets.GetIndex(ShipRenderingAssets.Get(sd.setId).left),
+                right=ShipRenderingAssets.GetIndex(ShipRenderingAssets.Get(sd.setId).right)
+            },
+            sd.healthPoints, sd.deathEffectId, sd.reloadSpeed, sd.bulletForce,
+            sd.bulletDamage, sd.bulletId, sd.colliderId, sd.rewardXp
+        );
+    }
+
+    public static void CreateBotShip (
+        float x, float y, float forwardForce, float turnForce,
+        BotShipAnimationSet set, int hp, int effectID, float reloadSpeed,
+        float bulletForceAdd, int bulletDamage, int bulletID,
+        int colliderId, int xpReward) {
 
         byte[] botShipData = new byte[50];
         Buffer.BlockCopy(BitConverter.GetBytes(x), 0, botShipData, 0, 4);
@@ -101,6 +132,7 @@ public static class BotShipSender {
         "Batman", "Superman", "Wonderwoman", "Wonder Woman", "Dude", "Duder", "Jimbob", "Jaybob", ":)",
         "Adam", "Jean", "Ola", "Minch", "Munich", "Anja", "Curvey", "Carly", "Shredder", "Schreidier",
         "Chriss Pratt", "Robbin", "Catwoman", "Brad Bitt", "Tom", "Bayley", "Jade", "Cody", "Dale",
-        "Tyrone", "6Tyrone9"
+        "Tyrone", "6Tyrone9", "Dirty D", "DD", "Kemper", "BTK", "Son of Sam", "Manson", "Charles", "G",
+        "Bill", "Tench", "Ford", "Holden", "IT Guy", "ICT", "404", "69man", "Yeah", "Nope", "Sure"
     };
 }

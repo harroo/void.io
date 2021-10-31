@@ -1496,6 +1496,62 @@ MonoBehaviour:
     bulletDamage: 1
     reloadUpgrades: 1
     colliderId: 3
+  - name: Disruptor
+    icon: {fileID: 21300000, guid: 47d4921052fdc8fb0942ce082b80b389, type: 3}
+    parentId: 4
+    id: 6
+    forwardForce: 1
+    turnForce: 0.1
+    brakePower: 3
+    defaultDrag: 1
+    defaultAngluarDrag: 12
+    regenSpeed: 1
+    playerHealth: 2
+    bulletDamage: 4
+    reloadUpgrades: 0.5
+    colliderId: 3
+  - name: Interceptor
+    icon: {fileID: 21300000, guid: a5bacd5273546e24ca4e3305846221de, type: 3}
+    parentId: 4
+    id: 7
+    forwardForce: 3
+    turnForce: 0.2
+    brakePower: 3
+    defaultDrag: 1
+    defaultAngluarDrag: 14
+    regenSpeed: 1
+    playerHealth: 1
+    bulletDamage: 3
+    reloadUpgrades: 0.5
+    colliderId: 3
+  - name: Derailer
+    icon: {fileID: 21300000, guid: 39d18071b92905a5a973d932c7127091, type: 3}
+    parentId: 6
+    id: 8
+    forwardForce: 3
+    turnForce: 0.2
+    brakePower: 3
+    defaultDrag: 1
+    defaultAngluarDrag: 14
+    regenSpeed: 0.5
+    playerHealth: 6
+    bulletDamage: 1
+    reloadUpgrades: 1.5
+    colliderId: 3
+  - name: Ravager
+    icon: {fileID: 21300000, guid: 096ea41ffd080f6f0abb28031f8c9203, type: 3}
+    parentId: 6
+    id: 9
+    forwardForce: 1
+    turnForce: 0.2
+    brakePower: 3
+    defaultDrag: 1
+    defaultAngluarDrag: 14
+    regenSpeed: 0.5
+    playerHealth: 7
+    bulletDamage: 1
+    reloadUpgrades: 2
+    colliderId: 3
 --- !u!1 &1373516713
 GameObject:
   m_ObjectHideFlags: 0

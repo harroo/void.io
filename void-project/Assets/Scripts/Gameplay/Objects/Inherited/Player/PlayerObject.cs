@@ -24,7 +24,7 @@ public class PlayerObject : Object {
     public override void Config (byte[] data) {
 
         textureIndex = BitConverter.ToInt32(data, 0);
-        spriteRenderer.sprite = PlayerRenderingAssets.Get(textureIndex);
+        spriteRenderer.sprite = ShipRenderingAssets.GetSprite(textureIndex);
 
         if (data.Length == 4) return;
 
