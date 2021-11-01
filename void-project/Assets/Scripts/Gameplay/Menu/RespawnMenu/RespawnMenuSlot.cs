@@ -40,5 +40,9 @@ public class RespawnMenuSlot : MonoBehaviour {
         PlayerHealth.instance.ResetHealth();
 
         RespawnMenu.instance.Clear();
+
+        PlayerRef.transform.position = new Vector3(
+            Random.Range(-4.0f, 4.0f), Random.Range(-4.0f, 4.0f), 0
+        );
     }
 }
