@@ -11,6 +11,7 @@ public class Pirate_Ravager : ShipData {
     public override int shipId => ShipID.Pirate_Ravager;
     public override int parentId => 5;
     public override int setId => 8;
+    public override int level => 2;
 
 //STATS:STD
     public override int healthPoints => 6;

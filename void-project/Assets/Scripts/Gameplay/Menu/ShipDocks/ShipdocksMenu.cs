@@ -11,17 +11,26 @@ public class ShipdocksMenu : MonoBehaviour {
 
         if (timer < 0) { timer = 0.25f;
 
-            // switch (PlayerStats.shipID) {
-            //
-            //     case 1: {
+            switch (ShipIndex.Get(PlayerStats.shipID).level) {
 
-                    if (PlayerStats.playerLevel >= 1)
+                case 1: {
+
+                    if (PlayerStats.playerLevel >= 8)
                         ShowAvailable();
                     else
-                        ShowRequired(10);
+                        ShowRequired(8);
 
-            //     break; }
-            // }
+                break; }
+
+                case 2: {
+
+                    if (PlayerStats.playerLevel >= 16)
+                        ShowAvailable();
+                    else
+                        ShowRequired(16);
+
+                break; }
+            }
 
         } else timer -= Time.deltaTime;
     }

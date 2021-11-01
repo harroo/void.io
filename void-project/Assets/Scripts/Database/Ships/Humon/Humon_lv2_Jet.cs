@@ -11,6 +11,7 @@ public class Humon_Jet : ShipData {
     public override int shipId => ShipID.Humon_Jet;
     public override int parentId => 1;
     public override int setId => 1;
+    public override int level => 2;
 
 //STATS:STD
     public override int healthPoints => 3;

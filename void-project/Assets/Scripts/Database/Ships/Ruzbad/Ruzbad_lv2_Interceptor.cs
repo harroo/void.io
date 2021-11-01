@@ -11,6 +11,7 @@ public class Ruzbad_Interceptor : ShipData {
     public override int shipId => ShipID.Ruzbad_Interceptor;
     public override int parentId => 4;
     public override int setId => 5;
+    public override int level => 2;
 
 //STATS:STD
     public override int healthPoints => 1;

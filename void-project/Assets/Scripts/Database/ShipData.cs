@@ -6,6 +6,7 @@ public class ShipData {
     public virtual int shipId => -1;
     public virtual int parentId => 0;
     public virtual int setId => 0;
+    public virtual int level => 0;
 
 //STATS:STD
     public virtual int healthPoints => 0;
