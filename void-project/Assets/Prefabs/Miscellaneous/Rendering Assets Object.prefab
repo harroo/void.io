@@ -177,6 +177,30 @@ MonoBehaviour:
     forward: {fileID: 21300000, guid: 206d1f69b7a4574eea0bd01ce368d1fb, type: 3}
     left: {fileID: 21300000, guid: 9161447a816bc29e393e8054ab1b7761, type: 3}
     right: {fileID: 21300000, guid: 3b994019df1641d17bb040f1c439554b, type: 3}
+  - idle: {fileID: 21300000, guid: 17943ee71c4d920c8a16aea3593e6e26, type: 3}
+    forward: {fileID: 21300000, guid: 9768a2601a5db288da601a1e74bae04b, type: 3}
+    left: {fileID: 21300000, guid: 1fae546e54da51034815869dd7d8df81, type: 3}
+    right: {fileID: 21300000, guid: 1fef621d51e14cc48b28bb7d79b69d32, type: 3}
+  - idle: {fileID: 21300000, guid: b68cee5c57256b9a9bda512af7fe87a4, type: 3}
+    forward: {fileID: 21300000, guid: bcbd669f86b1852efbc192de2f517a06, type: 3}
+    left: {fileID: 21300000, guid: ea220dfa76fe17d8292dc18266a5c407, type: 3}
+    right: {fileID: 21300000, guid: 393c7ae57f51fac52b0dde2936730608, type: 3}
+  - idle: {fileID: 21300000, guid: 7a7cbb0eae67f94cb824f083641b559b, type: 3}
+    forward: {fileID: 21300000, guid: 43fdde78501caf8bb83d7aaf8929c6ee, type: 3}
+    left: {fileID: 21300000, guid: e14e197000ffd0961a646fda5d9f4872, type: 3}
+    right: {fileID: 21300000, guid: f285dbfa7274e49a1afd296b7b2d8d6b, type: 3}
+  - idle: {fileID: 21300000, guid: 687688b604ec8fd0b93a5599ee1cad16, type: 3}
+    forward: {fileID: 21300000, guid: 40e264942a3670282874c76b2553e110, type: 3}
+    left: {fileID: 21300000, guid: b7d0059708b63f0cb8665e4906561a46, type: 3}
+    right: {fileID: 21300000, guid: a57836d9d105796cab3adf970c348161, type: 3}
+  - idle: {fileID: 21300000, guid: 36891e3f74e8d4828b1300805a71d387, type: 3}
+    forward: {fileID: 21300000, guid: 14ab0e78c432b93c6b1491acf67e90a5, type: 3}
+    left: {fileID: 21300000, guid: ddc69b8d5c5b222c6884632c07df117d, type: 3}
+    right: {fileID: 21300000, guid: bccbdd4c805b683168fb6836bb4342b3, type: 3}
+  - idle: {fileID: 21300000, guid: 78095bc3351d510b78939fa486fc0645, type: 3}
+    forward: {fileID: 21300000, guid: bcc51c4c942904ad78db6f95e522fbb0, type: 3}
+    left: {fileID: 21300000, guid: 6e00655cfd01a5b16bc8ca7ffcde3f50, type: 3}
+    right: {fileID: 21300000, guid: 7ac87d07a86b0cbb8b45a9821395d92b, type: 3}
 --- !u!114 &1474804660
 MonoBehaviour:
   m_ObjectHideFlags: 0
