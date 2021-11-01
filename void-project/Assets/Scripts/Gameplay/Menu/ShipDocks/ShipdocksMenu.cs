@@ -13,26 +13,24 @@ public class ShipdocksMenu : MonoBehaviour {
 
             switch (ShipIndex.Get(PlayerStats.shipID).level) {
 
-                case 1: {
-
-                    if (PlayerStats.playerLevel >= 8)
-                        ShowAvailable();
-                    else
-                        ShowRequired(8);
-
-                break; }
-
-                case 2: {
-
-                    if (PlayerStats.playerLevel >= 16)
-                        ShowAvailable();
-                    else
-                        ShowRequired(16);
-
-                break; }
+                case 1: Check(10); break;
+                case 2: Check(22); break;
+                case 3: Check(34); break;
+                case 4: Check(46); break;
+                case 5: Check(58); break;
+                case 6: Check(69); break;
+                case 7: Check(82); break;
             }
 
         } else timer -= Time.deltaTime;
+    }
+
+    public void Check (int amount) {
+
+        if (PlayerStats.playerLevel >= amount)
+            ShowAvailable();
+        else
+            ShowRequired(amount);
     }
 
     public GameObject slotPrefab;
