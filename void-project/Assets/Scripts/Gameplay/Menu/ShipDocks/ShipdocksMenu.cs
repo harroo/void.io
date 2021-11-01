@@ -27,6 +27,9 @@ public class ShipdocksMenu : MonoBehaviour {
 
     public void Check (int amount) {
 
+        //uncomment for testing
+        // ShowAvailable(); return;
+
         if (PlayerStats.playerLevel >= amount)
             ShowAvailable();
         else
