@@ -13,7 +13,7 @@ public class ShipdocksMenu : MonoBehaviour {
 
             switch (ShipIndex.Get(PlayerStats.shipID).level) {
 
-                case 1: Check(1); break;
+                case 1: Check(10); break;
                 case 2: Check(22); break;
                 case 3: Check(34); break;
                 case 4: Check(46); break;
