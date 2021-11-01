@@ -16,6 +16,6 @@ tar czvf linux.tar.xz linux-build/
 echo "Compressing Windows Player Build..."
 zip -r windows.zip windows-build/
 
-nautilus ~/Downloads/void-builds/
+nautilus ~/Downloads/void-builds/ & disown
 
 echo "Done!"
