@@ -35,10 +35,11 @@ public class BotShipCreator : MonoBehaviour {
             int index = 0, rng = UnityEngine.Random.Range(0, ShipIndex.shipData.Count);
             foreach (var shipData in ShipIndex.shipData.Values) {
 
-                if (shipData.forceNoBot) break;
+                if (!shipData.forceNoBot) {
 
-                if (index == rng) return shipData;
-                index++;
+                    if (index == rng) return shipData;
+                    index++;
+                }
             }
         }
     }
@@ -61,8 +62,8 @@ public static class BotShipSender {
                 left=ShipRenderingAssets.GetIndex(ShipRenderingAssets.Get(sd.setId).left),
                 right=ShipRenderingAssets.GetIndex(ShipRenderingAssets.Get(sd.setId).right)
             },
-            sd.healthPoints, sd.deathEffectId, sd.reloadSpeed, sd.bulletForce,
-            sd.bulletDamage, sd.bulletId, sd.colliderId, sd.rewardXp
+            sd.healthPoints, sd.deathEffectId, sd.reloadSpeed, sd.bulletForce + 1,
+            sd.bulletDamage + 1, sd.bulletId, sd.colliderId, sd.rewardXp
         );
     }
 
