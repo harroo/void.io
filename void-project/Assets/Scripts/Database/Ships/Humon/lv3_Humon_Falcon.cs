@@ -28,7 +28,7 @@ public class Humon_Falcon : ShipData {
 //STATS:COMBAT
     public override int bulletDamage => 1;
     public override int bulletForce => 0;
-    public override float reloadSpeed => 0.4f;
+    public override float reloadSpeed => 6.9f;
     public override WeaponType weaponType => WeaponType.Humon_Rapid;
 
 //BOT
