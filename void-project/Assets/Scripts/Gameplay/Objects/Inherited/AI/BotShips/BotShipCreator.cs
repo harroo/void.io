@@ -11,8 +11,6 @@ public class BotShipCreator : MonoBehaviour {
 
     public int max;
 
-    public BotShipInfo[] shipInfos;
-
     private float timer;
 
     private void Update () {
@@ -24,7 +22,6 @@ public class BotShipCreator : MonoBehaviour {
             BotShipSender.CreateBotShip(
                 UnityEngine.Random.Range(-60, 60),
                 UnityEngine.Random.Range(-60, 60),
-                // shipInfos[UnityEngine.Random.Range(0, shipInfos.Length)]
                 GetRandomShipData()
             );
 
@@ -48,28 +45,7 @@ public class BotShipCreator : MonoBehaviour {
     public static void Remove (Object aso) { if (instance != null) instance.asos.Remove(aso); }
 }
 
-[Serializable]
-public class BotShipInfo {
-
-    public string infoName; //for editor
-
-    [Space()]
-    public int hp;
-    public float forwardForce, turnForce, reloadSpeed;
-
-    public int effectID, bulletDamage, bulletForceAdd, bulletID, colliderId, xpReward;
-
-    public BotShipAnimationSet set;
-
-    // public
-}
-
 public static class BotShipSender {
-
-    public static void CreateBotShip (float x, float y, BotShipInfo info) {
-
-        CreateBotShip(x, y, info.forwardForce, info.turnForce, info.set, info.hp, info.effectID, info.reloadSpeed, info.bulletForceAdd, info.bulletDamage, info.bulletID, info.colliderId, info.xpReward);
-    }
 
     public static void CreateBotShip (float x, float y, ShipData sd) {
 

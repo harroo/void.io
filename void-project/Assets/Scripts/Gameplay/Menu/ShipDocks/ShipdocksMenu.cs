@@ -13,7 +13,7 @@ public class ShipdocksMenu : MonoBehaviour {
 
             switch (ShipIndex.Get(PlayerStats.shipID).level) {
 
-                case 1: Check(10); break;
+                case 1: Check(1); break;
                 case 2: Check(22); break;
                 case 3: Check(34); break;
                 case 4: Check(46); break;
@@ -35,7 +35,6 @@ public class ShipdocksMenu : MonoBehaviour {
 
     public GameObject slotPrefab;
     public Transform parent;
-    public UpgradeOption[] options;
 
     private void ShowAvailable () {
 
@@ -109,29 +108,4 @@ public class ShipdocksMenu : MonoBehaviour {
 
         ResetUpgrades();
     }
-}
-
-[System.Serializable]
-public class UpgradeOption {
-
-    public string name;
-    public Sprite icon;
-
-    public int parentId;
-    public int id;
-
-    [Space()]
-    public float forwardForce = 2.0f;
-    public float turnForce = 0.02f;
-
-    [Space()]
-    public float brakePower = 2.0f, defaultDrag = 1.0f, defaultAngluarDrag = 2.0f;
-
-    [Space()]
-    public float regenSpeed = 1.0f;
-    public int playerHealth = 4, bulletDamage = 1;
-    public float reloadUpgrades = 1.0f;
-
-    [Space()]
-    public int colliderId = 1;
 }
