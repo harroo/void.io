@@ -22,7 +22,7 @@ public class Pirate_Ravager : ShipData {
     public override float turnForce => 0.2f;
     public override float defaultDrag => 1;
     public override float defaultAngluarDrag => 30;
-    public override int colliderId => 9;
+    public override int colliderId => shipId;
     public override float brakePower => 2;
 
 //STATS:COMBAT
@@ -37,4 +37,14 @@ public class Pirate_Ravager : ShipData {
     public override int deathEffectId => 2;
     public override float forwardForceBot => 0.5f;
     public override float turnForceBot => 0.0032f;
+}
+
+public class Pirate_Ravager_Collider : ColliderData {
+
+    public override int id => ShipID.Pirate_Ravager;
+
+    public override bool isCircle => false;
+
+    public override float sizeX => 0.082f;
+    public override float sizeY => 0.18f;
 }

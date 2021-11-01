@@ -10,7 +10,7 @@ public class ColliderCalculator : MonoBehaviour {
 
     public void Render (int id) {
 
-        ColliderInfo cinfo = ColliderInfoStash.Get(id);
+        ColliderData cinfo = ColliderIndex.Get(id);
         if (cinfo == null) return;
 
         boxCollider.enabled = !cinfo.isCircle;
@@ -19,16 +19,4 @@ public class ColliderCalculator : MonoBehaviour {
         boxCollider.size = new Vector2(cinfo.sizeX, cinfo.sizeY);
         circleCollider.radius = cinfo.radius;
     }
-}
-
-[Serializable]
-public class ColliderInfo {
-
-    public string name;
-
-    public int id;
-
-    public bool isCircle;
-
-    public float radius, sizeX, sizeY;
 }

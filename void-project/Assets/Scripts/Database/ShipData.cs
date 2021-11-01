@@ -32,4 +32,5 @@ public class ShipData {
     public virtual int deathEffectId => 0;
     public virtual float forwardForceBot => 0;
     public virtual float turnForceBot => 0;
+    public virtual bool forceNoBot => false;
 }

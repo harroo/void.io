@@ -22,7 +22,7 @@ public class Ruzbad_Default : ShipData {
     public override float turnForce => 0.02f;
     public override float defaultDrag => 1;
     public override float defaultAngluarDrag => 2;
-    public override int colliderId => 4;
+    public override int colliderId => shipId;
     public override float brakePower => 2;
 
 //STATS:COMBAT
@@ -37,4 +37,13 @@ public class Ruzbad_Default : ShipData {
     public override int deathEffectId => 2;
     public override float forwardForceBot => 2;
     public override float turnForceBot => 0.002f;
+}
+
+public class Ruzbad_Default_Collider : ColliderData {
+
+    public override int id => ShipID.Ruzbad_Default;
+
+    public override bool isCircle => true;
+
+    public override float radius => 0.08f;
 }

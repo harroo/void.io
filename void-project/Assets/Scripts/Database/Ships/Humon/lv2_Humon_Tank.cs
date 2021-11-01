@@ -22,7 +22,7 @@ public class Humon_Tank : ShipData {
     public override float turnForce => 0.1f;
     public override float defaultDrag => 1;
     public override float defaultAngluarDrag => 12;
-    public override int colliderId => 3;
+    public override int colliderId => shipId;
     public override float brakePower => 3;
 
 //STATS:COMBAT
@@ -37,4 +37,13 @@ public class Humon_Tank : ShipData {
     public override int deathEffectId => 2;
     public override float forwardForceBot => 1;
     public override float turnForceBot => 0.0015f;
+}
+
+public class Humon_Tank_Collider : ColliderData {
+
+    public override int id => ShipID.Humon_Tank;
+
+    public override bool isCircle => true;
+
+    public override float radius => 0.09f;
 }

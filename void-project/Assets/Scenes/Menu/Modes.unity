@@ -13501,7 +13501,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rendering Assets Object
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1474804660, guid: f8c56f9fa7379a00c8f485231fb32447, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f8c56f9fa7379a00c8f485231fb32447, type: 3}
 --- !u!4 &4321812010026304480
 Transform:

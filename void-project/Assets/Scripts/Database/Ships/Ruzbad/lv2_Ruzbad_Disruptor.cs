@@ -22,7 +22,7 @@ public class Ruzbad_Disruptor : ShipData {
     public override float turnForce => 0.1f;
     public override float defaultDrag => 1;
     public override float defaultAngluarDrag => 12;
-    public override int colliderId => 6;
+    public override int colliderId => shipId;
     public override float brakePower => 3;
 
 //STATS:COMBAT
@@ -37,4 +37,13 @@ public class Ruzbad_Disruptor : ShipData {
     public override int deathEffectId => 2;
     public override float forwardForceBot => 1;
     public override float turnForceBot => 0.0015f;
+}
+
+public class Ruzbad_Disruptor_Collider : ColliderData {
+
+    public override int id => ShipID.Ruzbad_Disruptor;
+
+    public override bool isCircle => true;
+
+    public override float radius => 0.08f;
 }

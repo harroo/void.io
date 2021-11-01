@@ -30,13 +30,17 @@ public class BotShipCreator : MonoBehaviour {
 
     private ShipData GetRandomShipData () {
 
-        int index = 0, rng = UnityEngine.Random.Range(0, ShipIndex.shipData.Count);
-        foreach (var shipData in ShipIndex.shipData.Values) {
+        while (true) {
 
-            if (index == rng) return shipData;
-            index++;
+            int index = 0, rng = UnityEngine.Random.Range(0, ShipIndex.shipData.Count);
+            foreach (var shipData in ShipIndex.shipData.Values) {
+
+                if (shipData.forceNoBot) break;
+
+                if (index == rng) return shipData;
+                index++;
+            }
         }
-        return null;
     }
 
     private List<Object> asos = new List<Object>();
